@@ -12,10 +12,10 @@
 @interface PlayerNode : CCNode
 
 @property CCSprite *playerSprite;
-@property CGPoint point;
 @property CGFloat velocity_y;
-@property BOOL isUp;
 
 - (PlayerNode *)initWithPosition:(CGPoint)position;
+- (void)move:(CCTime)delta;
+- (void)jump;
 
 @end
