@@ -220,6 +220,8 @@
 		B81088AE18B970DF00F90511 /* newton-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = B81088AD18B970DF00F90511 /* newton-ipad.png */; };
 		B81088B018B970DF00F90511 /* newton.plist in Resources */ = {isa = PBXBuildFile; fileRef = B81088AF18B970DF00F90511 /* newton.plist */; };
 		B81088B218B970DF00F90511 /* newton.png in Resources */ = {isa = PBXBuildFile; fileRef = B81088B118B970DF00F90511 /* newton.png */; };
+		B81088BD18B976AA00F90511 /* PlayerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B81088BC18B976AA00F90511 /* PlayerNode.m */; };
+		B81088C318BAB03D00F90511 /* PhysicsNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B81088C218BAB03D00F90511 /* PhysicsNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -669,6 +671,10 @@
 		B81088AD18B970DF00F90511 /* newton-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "newton-ipad.png"; path = "Resources/newton-ipad.png"; sourceTree = "<group>"; };
 		B81088AF18B970DF00F90511 /* newton.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = newton.plist; path = Resources/newton.plist; sourceTree = "<group>"; };
 		B81088B118B970DF00F90511 /* newton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newton.png; path = Resources/newton.png; sourceTree = "<group>"; };
+		B81088BB18B976AA00F90511 /* PlayerNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerNode.h; sourceTree = "<group>"; };
+		B81088BC18B976AA00F90511 /* PlayerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerNode.m; sourceTree = "<group>"; };
+		B81088C118BAB03D00F90511 /* PhysicsNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsNode.h; sourceTree = "<group>"; };
+		B81088C218BAB03D00F90511 /* PhysicsNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicsNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1566,10 +1572,14 @@
 			children = (
 				B810888D18B970DF00F90511 /* AppDelegate.h */,
 				B810888E18B970DF00F90511 /* AppDelegate.m */,
-				B810889018B970DF00F90511 /* GameScene.h */,
-				B810889118B970DF00F90511 /* GameScene.m */,
 				B810889318B970DF00F90511 /* IntroScene.h */,
 				B810889418B970DF00F90511 /* IntroScene.m */,
+				B810889018B970DF00F90511 /* GameScene.h */,
+				B810889118B970DF00F90511 /* GameScene.m */,
+				B81088C118BAB03D00F90511 /* PhysicsNode.h */,
+				B81088C218BAB03D00F90511 /* PhysicsNode.m */,
+				B81088BB18B976AA00F90511 /* PlayerNode.h */,
+				B81088BC18B976AA00F90511 /* PlayerNode.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1756,6 +1766,7 @@
 				B810877718B970DE00F90511 /* OALSimpleAudio.m in Sources */,
 				B810866918B970DD00F90511 /* CCGLProgram.m in Sources */,
 				B810888B18B970DF00F90511 /* main.m in Sources */,
+				B81088BD18B976AA00F90511 /* PlayerNode.m in Sources */,
 				B810879E18B970DE00F90511 /* OALAudioSession.m in Sources */,
 				B810881518B970DE00F90511 /* CCBLocalizationManager.m in Sources */,
 				B810870118B970DD00F90511 /* CCTiledMapObjectGroup.m in Sources */,
@@ -1812,6 +1823,7 @@
 				B810871518B970DD00F90511 /* CCES2Renderer.m in Sources */,
 				B81087E518B970DE00F90511 /* aabb.c in Sources */,
 				B810880F18B970DE00F90511 /* CCBsequence.m in Sources */,
+				B81088C318BAB03D00F90511 /* PhysicsNode.m in Sources */,
 				B810867018B970DD00F90511 /* CCLabelAtlas.m in Sources */,
 				B810870B18B970DD00F90511 /* cocos2d.m in Sources */,
 				B810879318B970DE00F90511 /* ALSource.m in Sources */,

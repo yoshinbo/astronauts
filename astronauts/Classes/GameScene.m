@@ -9,7 +9,7 @@
 
 #import "GameScene.h"
 #import "IntroScene.h"
-
+#import "PhysicsNode.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - GameScene
@@ -36,23 +36,28 @@
     // Apple recommend assigning self with supers return value
     self = [super init];
     if (!self) return(nil);
-    
+
     // Enable touch handling on scene node
     self.userInteractionEnabled = YES;
-    
+
     // Create a colored background (Dark Grey)
-    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1.0f]];
-    [self addChild:background];
-    
+    //CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1.0f]];
+    //[self addChild:background];
+
     // Add a sprite
-    _sprite = [CCSprite spriteWithImageNamed:@"Icon-72.png"];
-    _sprite.position  = ccp(self.contentSize.width/2,self.contentSize.height/2);
-    [self addChild:_sprite];
-    
+    //_sprite = [CCSprite spriteWithImageNamed:@"Icon-72.png"];
+    //_sprite.position  = ccp(self.contentSize.width/2,self.contentSize.height/2);
+    //[self addChild:_sprite];
+
     // Animate sprite with action
-    CCActionRotateBy* actionSpin = [CCActionRotateBy actionWithDuration:1.5f angle:360];
-    [_sprite runAction:[CCActionRepeatForever actionWithAction:actionSpin]];
-    
+    //CCActionRotateBy* actionSpin = [CCActionRotateBy actionWithDuration:1.5f angle:360];
+    //[_sprite runAction:[CCActionRepeatForever actionWithAction:actionSpin]];
+
+
+    PhysicsNode *physics = [[PhysicsNode alloc]initWithContentSize:self.contentSize];
+    [self addChild:physics];
+
+
     // Create a back button
     CCButton *backButton = [CCButton buttonWithTitle:@"[ Menu ]" fontName:@"Verdana-Bold" fontSize:18.0f];
     backButton.positionType = CCPositionTypeNormalized;
@@ -79,11 +84,11 @@
 {
     // always call super onEnter first
     [super onEnter];
-    
+
     // In pre-v3, touch enable and scheduleUpdate was called here
     // In v3, touch is enabled by setting userInterActionEnabled for the individual nodes
     // Pr frame update is automatically enabled, if update is overridden
-    
+
 }
 
 // -----------------------------------------------------------------------
@@ -92,21 +97,6 @@
 {
     // always call super onExit last
     [super onExit];
-}
-
-// -----------------------------------------------------------------------
-#pragma mark - Touch Handler
-// -----------------------------------------------------------------------
-
--(void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    CGPoint touchLoc = [touch locationInNode:self];
-    
-    // Log touch location
-    CCLOG(@"Move sprite to @ %@",NSStringFromCGPoint(touchLoc));
-    
-    // Move our sprite to touch location
-    CCActionMoveTo *actionMove = [CCActionMoveTo actionWithDuration:1.0f position:touchLoc];
-    [_sprite runAction:actionMove];
 }
 
 // -----------------------------------------------------------------------
