@@ -35,7 +35,6 @@
         // add player node
         _player = [[PlayerNode alloc]initWithPosition:
                    ccp(self.contentSize.width/3,self.contentSize.height/2)];
-        _player.scale = 0.5;
         [_physicsNode addChild:_player];
 
     }
