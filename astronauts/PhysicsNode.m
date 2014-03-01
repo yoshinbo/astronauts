@@ -8,11 +8,15 @@
 
 #import "PhysicsNode.h"
 #import "PlayerNode.h"
+#import "MeteoriteNode.h"
+
+int addMeteoriteAfterDuration = 100;
 
 @implementation PhysicsNode
 {
     PlayerNode  *_player;
     CCPhysicsNode *_physicsNode;
+    int frameSpentSinceLastMeteoriteAdded;
 }
 
 - (PhysicsNode *)initWithContentSize:(CGSize)contentSize;
@@ -24,6 +28,7 @@
         self.userInteractionEnabled = YES;
 
         self.contentSize = contentSize;
+        frameSpentSinceLastMeteoriteAdded = 0;
 
         // add physics node
         _physicsNode = [CCPhysicsNode node];
@@ -35,6 +40,9 @@
         // add player node
         _player = [[PlayerNode alloc]initWithPosition:
                    ccp(self.contentSize.width/3,self.contentSize.height/2)];
+        _player.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, _player.contentSize} cornerRadius:0];
+        _player.physicsBody.collisionGroup = @"playerGroup";
+        _player.physicsBody.collisionType = @"playerCollision";
         [_physicsNode addChild:_player];
 
     }
@@ -45,6 +53,12 @@
 {
 
     [_player move:delta];
+
+    frameSpentSinceLastMeteoriteAdded++;
+    if (frameSpentSinceLastMeteoriteAdded == addMeteoriteAfterDuration) {
+        frameSpentSinceLastMeteoriteAdded = 0;
+        [self addMeteorite];
+    }
 
 }
 
@@ -57,5 +71,18 @@
     [_player jump];
 
 }
+
+-(void) addMeteorite
+{
+    NSLog(@"add meteorite");
+    MeteoriteNode *meteorite = [[MeteoriteNode alloc] init];
+    NSLog(@"%f",meteorite.contentSize.width);
+    meteorite.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, meteorite.contentSize} cornerRadius:0];
+    meteorite.physicsBody.collisionGroup = @"meteoriteGroup";
+    meteorite.physicsBody.collisionType  = @"meteoriteCollision";
+    [_physicsNode addChild:meteorite];
+}
+
+
 
 @end

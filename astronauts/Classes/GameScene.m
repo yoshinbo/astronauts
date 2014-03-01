@@ -26,7 +26,7 @@
 
 + (GameScene *)scene
 {
-    return [[self alloc] init];
+    return [[GameScene alloc] init];
 }
 
 // -----------------------------------------------------------------------

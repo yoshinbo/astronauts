@@ -222,6 +222,7 @@
 		B81088B218B970DF00F90511 /* newton.png in Resources */ = {isa = PBXBuildFile; fileRef = B81088B118B970DF00F90511 /* newton.png */; };
 		B81088BD18B976AA00F90511 /* PlayerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B81088BC18B976AA00F90511 /* PlayerNode.m */; };
 		B81088C318BAB03D00F90511 /* PhysicsNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B81088C218BAB03D00F90511 /* PhysicsNode.m */; };
+		B8B1CCED18C18A6800A77730 /* MeteoriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B1CCEC18C18A6800A77730 /* MeteoriteNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -675,6 +676,8 @@
 		B81088BC18B976AA00F90511 /* PlayerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerNode.m; sourceTree = "<group>"; };
 		B81088C118BAB03D00F90511 /* PhysicsNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsNode.h; sourceTree = "<group>"; };
 		B81088C218BAB03D00F90511 /* PhysicsNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicsNode.m; sourceTree = "<group>"; };
+		B8B1CCEB18C18A6800A77730 /* MeteoriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeteoriteNode.h; sourceTree = "<group>"; };
+		B8B1CCEC18C18A6800A77730 /* MeteoriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeteoriteNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1580,6 +1583,8 @@
 				B81088C218BAB03D00F90511 /* PhysicsNode.m */,
 				B81088BB18B976AA00F90511 /* PlayerNode.h */,
 				B81088BC18B976AA00F90511 /* PlayerNode.m */,
+				B8B1CCEB18C18A6800A77730 /* MeteoriteNode.h */,
+				B8B1CCEC18C18A6800A77730 /* MeteoriteNode.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1787,6 +1792,7 @@
 				B81086DF18B970DD00F90511 /* CCSprite9Slice.m in Sources */,
 				B81086F118B970DD00F90511 /* CCTextureAtlas.m in Sources */,
 				B81087B218B970DE00F90511 /* OALAudioFile.m in Sources */,
+				B8B1CCED18C18A6800A77730 /* MeteoriteNode.m in Sources */,
 				B81086D818B970DD00F90511 /* ccShaders.m in Sources */,
 				B81087EC18B970DE00F90511 /* matrix.c in Sources */,
 				B81086FE18B970DD00F90511 /* CCTiledMapLayer.m in Sources */,
@@ -2031,6 +2037,7 @@
 				B81088B718B970DF00F90511 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B81088B818B970DF00F90511 /* Build configuration list for PBXNativeTarget "astronauts" */ = {
 			isa = XCConfigurationList;
@@ -2039,6 +2046,7 @@
 				B81088BA18B970DF00F90511 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
