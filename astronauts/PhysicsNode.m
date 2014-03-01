@@ -33,14 +33,18 @@ int addMeteoriteAfterDuration = 100;
         // add physics node
         _physicsNode = [CCPhysicsNode node];
         _physicsNode.gravity = ccp(0,0);
-        _physicsNode.debugDraw = YES;
+        //_physicsNode.debugDraw = YES;
         _physicsNode.collisionDelegate = self;
         [self addChild:_physicsNode];
 
         // add player node
         _player = [[PlayerNode alloc]initWithPosition:
                    ccp(self.contentSize.width/3,self.contentSize.height/2)];
-        _player.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, _player.contentSize} cornerRadius:0];
+        _player.physicsBody = [CCPhysicsBody bodyWithRect:CGRectMake(
+                                                                     -_player.contentSize.width/2,
+                                                                     -_player.contentSize.height/2,
+                                                                     _player.contentSize.width,
+                                                                     _player.contentSize.height) cornerRadius:0];
         _player.physicsBody.collisionGroup = @"playerGroup";
         _player.physicsBody.collisionType = @"playerCollision";
         [_physicsNode addChild:_player];
@@ -74,15 +78,20 @@ int addMeteoriteAfterDuration = 100;
 
 -(void) addMeteorite
 {
-    NSLog(@"add meteorite");
     MeteoriteNode *meteorite = [[MeteoriteNode alloc] init];
-    NSLog(@"%f",meteorite.contentSize.width);
-    meteorite.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, meteorite.contentSize} cornerRadius:0];
+    meteorite.physicsBody = [CCPhysicsBody bodyWithRect:CGRectMake(
+                                                                   -meteorite.contentSize.width/2,
+                                                                   -meteorite.contentSize.height/2,
+                                                                   meteorite.contentSize.width,
+                                                                   meteorite.contentSize.height) cornerRadius:0];
     meteorite.physicsBody.collisionGroup = @"meteoriteGroup";
     meteorite.physicsBody.collisionType  = @"meteoriteCollision";
     [_physicsNode addChild:meteorite];
 }
 
-
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair meteoriteCollision:(CCNode *)meteorite playerCollision:(CCNode *)player {
+    [player removeFromParent];
+    return YES;
+}
 
 @end

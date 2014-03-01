@@ -57,7 +57,7 @@ int maxDuration = 5.0;
                                                                                    )
                             ];
     CCAction *actionRemove = [CCActionRemove action];
-    [_meteoriteSprite runAction:[CCActionSequence actionWithArray:@[actionMove,actionRemove]]];
+    [self runAction:[CCActionSequence actionWithArray:@[actionMove,actionRemove]]];
 }
 
 @end
