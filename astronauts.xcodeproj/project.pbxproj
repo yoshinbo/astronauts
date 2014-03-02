@@ -672,12 +672,12 @@
 		B81088AD18B970DF00F90511 /* newton-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "newton-ipad.png"; path = "Resources/newton-ipad.png"; sourceTree = "<group>"; };
 		B81088AF18B970DF00F90511 /* newton.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = newton.plist; path = Resources/newton.plist; sourceTree = "<group>"; };
 		B81088B118B970DF00F90511 /* newton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newton.png; path = Resources/newton.png; sourceTree = "<group>"; };
-		B81088BB18B976AA00F90511 /* PlayerNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerNode.h; sourceTree = "<group>"; };
-		B81088BC18B976AA00F90511 /* PlayerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerNode.m; sourceTree = "<group>"; };
-		B81088C118BAB03D00F90511 /* PhysicsNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsNode.h; sourceTree = "<group>"; };
-		B81088C218BAB03D00F90511 /* PhysicsNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicsNode.m; sourceTree = "<group>"; };
-		B8B1CCEB18C18A6800A77730 /* MeteoriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeteoriteNode.h; sourceTree = "<group>"; };
-		B8B1CCEC18C18A6800A77730 /* MeteoriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeteoriteNode.m; sourceTree = "<group>"; };
+		B81088BB18B976AA00F90511 /* PlayerNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerNode.h; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/PlayerNode.h; sourceTree = "<absolute>"; };
+		B81088BC18B976AA00F90511 /* PlayerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerNode.m; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/PlayerNode.m; sourceTree = "<absolute>"; };
+		B81088C118BAB03D00F90511 /* PhysicsNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhysicsNode.h; path = Classes/PhysicsNode.h; sourceTree = "<group>"; };
+		B81088C218BAB03D00F90511 /* PhysicsNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhysicsNode.m; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/PhysicsNode.m; sourceTree = "<absolute>"; };
+		B8B1CCEB18C18A6800A77730 /* MeteoriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeteoriteNode.h; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/MeteoriteNode.h; sourceTree = "<absolute>"; };
+		B8B1CCEC18C18A6800A77730 /* MeteoriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MeteoriteNode.m; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/MeteoriteNode.m; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
