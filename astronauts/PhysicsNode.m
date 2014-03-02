@@ -14,9 +14,16 @@ int addMeteoriteAfterDuration = 100;
 
 @implementation PhysicsNode
 {
+    BOOL is_start;
+    BOOL is_over;
+
+    int score;
+    int frameSpentSinceLastMeteoriteAdded;
+
     PlayerNode  *_player;
     CCPhysicsNode *_physicsNode;
-    int frameSpentSinceLastMeteoriteAdded;
+
+    CCLabelTTF *_scoreLabel;
 }
 
 - (PhysicsNode *)initWithContentSize:(CGSize)contentSize;
@@ -27,13 +34,24 @@ int addMeteoriteAfterDuration = 100;
         // Enable touch handling on scene node
         self.userInteractionEnabled = YES;
 
+        is_start = FALSE;
+        is_over = FALSE;
+
         self.contentSize = contentSize;
         frameSpentSinceLastMeteoriteAdded = 0;
+
+        // Score
+        score = 0;
+        NSString *targetString = [NSString stringWithFormat:@"%d",score];
+        _scoreLabel = [CCLabelTTF labelWithString:targetString fontName:@"Marker Felt" fontSize:30];
+        _scoreLabel.color = [CCColor whiteColor];
+        _scoreLabel.position = ccp(self.contentSize.width/2, self.contentSize.height*0.95f);
+        [self addChild:_scoreLabel];
 
         // add physics node
         _physicsNode = [CCPhysicsNode node];
         _physicsNode.gravity = ccp(0,0);
-        //_physicsNode.debugDraw = YES;
+        _physicsNode.debugDraw = YES;
         _physicsNode.collisionDelegate = self;
         [self addChild:_physicsNode];
 
@@ -56,12 +74,17 @@ int addMeteoriteAfterDuration = 100;
 -(void) update:(CCTime)delta
 {
 
-    [_player move:delta];
+    if (is_start) {
 
-    frameSpentSinceLastMeteoriteAdded++;
-    if (frameSpentSinceLastMeteoriteAdded == addMeteoriteAfterDuration) {
-        frameSpentSinceLastMeteoriteAdded = 0;
-        [self addMeteorite];
+        [_player move:delta];
+
+        frameSpentSinceLastMeteoriteAdded++;
+        if (frameSpentSinceLastMeteoriteAdded == addMeteoriteAfterDuration) {
+            frameSpentSinceLastMeteoriteAdded = 0;
+            [self addMeteorite];
+            [self addScore];
+        }
+
     }
 
 }
@@ -72,7 +95,11 @@ int addMeteoriteAfterDuration = 100;
 
 -(void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
 
-    [_player jump];
+    if (is_start) {
+        [_player jump];
+    } else {
+        [self start];
+    }
 
 }
 
@@ -90,8 +117,38 @@ int addMeteoriteAfterDuration = 100;
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair meteoriteCollision:(CCNode *)meteorite playerCollision:(CCNode *)player {
+
+    CGPoint point = player.position;
     [player removeFromParent];
+
+    CCParticleExplosion *particle = [[CCParticleExplosion alloc]init];
+    particle.position = point;
+    particle.autoRemoveOnFinish = YES;
+    [self addChild:particle];
+
+    [self over];
+
     return YES;
+}
+
+- (void) addScore
+{
+    score++;
+    NSString *scoreStr = [[NSString alloc] initWithFormat:@"%d", score];
+    [_scoreLabel setString: [NSString stringWithFormat:@"%@",scoreStr]];
+}
+
+- (void) start
+{
+    if (!is_over) {
+        is_start = TRUE;
+    }
+}
+
+- (void) over
+{
+    is_start = FALSE;
+    is_over = TRUE;
 }
 
 @end

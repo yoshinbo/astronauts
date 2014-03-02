@@ -14,6 +14,7 @@ const float max_velocity = 10;
 @implementation PlayerNode
 {
     CGSize winSize;
+    BOOL is_explosion;
 }
 
 - (PlayerNode*) initWithPosition:(CGPoint)position
@@ -40,6 +41,8 @@ const float max_velocity = 10;
 
 - (void)move:(CCTime)delta
 {
+    if (!is_explosion) {
+
     // set acceleration
     CGFloat acceleration = delta * 10.0f;
     if (fabs(_velocity_y) < max_velocity){
@@ -53,6 +56,8 @@ const float max_velocity = 10;
         self.position = ccp(self.position.x, 0 - self.contentSize.height * 0.4);
     } else {
         self.position = ccpAdd(self.position, ccp(0,_velocity_y));
+    }
+
     }
 }
 
