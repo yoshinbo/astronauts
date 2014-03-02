@@ -221,8 +221,9 @@
 		B81088B018B970DF00F90511 /* newton.plist in Resources */ = {isa = PBXBuildFile; fileRef = B81088AF18B970DF00F90511 /* newton.plist */; };
 		B81088B218B970DF00F90511 /* newton.png in Resources */ = {isa = PBXBuildFile; fileRef = B81088B118B970DF00F90511 /* newton.png */; };
 		B81088BD18B976AA00F90511 /* PlayerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B81088BC18B976AA00F90511 /* PlayerNode.m */; };
-		B81088C318BAB03D00F90511 /* PhysicsNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B81088C218BAB03D00F90511 /* PhysicsNode.m */; };
+		B81088C318BAB03D00F90511 /* PhysicsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B81088C218BAB03D00F90511 /* PhysicsLayer.m */; };
 		B8B1CCED18C18A6800A77730 /* MeteoriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B1CCEC18C18A6800A77730 /* MeteoriteNode.m */; };
+		B8D913B618C32D08004921F0 /* ResultLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D913B518C32D08004921F0 /* ResultLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -674,10 +675,12 @@
 		B81088B118B970DF00F90511 /* newton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newton.png; path = Resources/newton.png; sourceTree = "<group>"; };
 		B81088BB18B976AA00F90511 /* PlayerNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerNode.h; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/PlayerNode.h; sourceTree = "<absolute>"; };
 		B81088BC18B976AA00F90511 /* PlayerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerNode.m; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/PlayerNode.m; sourceTree = "<absolute>"; };
-		B81088C118BAB03D00F90511 /* PhysicsNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhysicsNode.h; path = Classes/PhysicsNode.h; sourceTree = "<group>"; };
-		B81088C218BAB03D00F90511 /* PhysicsNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhysicsNode.m; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/PhysicsNode.m; sourceTree = "<absolute>"; };
+		B81088C118BAB03D00F90511 /* PhysicsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhysicsLayer.h; path = Classes/PhysicsLayer.h; sourceTree = "<group>"; };
+		B81088C218BAB03D00F90511 /* PhysicsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhysicsLayer.m; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/PhysicsLayer.m; sourceTree = "<absolute>"; };
 		B8B1CCEB18C18A6800A77730 /* MeteoriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeteoriteNode.h; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/MeteoriteNode.h; sourceTree = "<absolute>"; };
 		B8B1CCEC18C18A6800A77730 /* MeteoriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MeteoriteNode.m; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/MeteoriteNode.m; sourceTree = "<absolute>"; };
+		B8D913B418C32D08004921F0 /* ResultLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultLayer.h; path = Classes/ResultLayer.h; sourceTree = "<group>"; };
+		B8D913B518C32D08004921F0 /* ResultLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultLayer.m; path = Classes/ResultLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1579,8 +1582,10 @@
 				B810889418B970DF00F90511 /* IntroScene.m */,
 				B810889018B970DF00F90511 /* GameScene.h */,
 				B810889118B970DF00F90511 /* GameScene.m */,
-				B81088C118BAB03D00F90511 /* PhysicsNode.h */,
-				B81088C218BAB03D00F90511 /* PhysicsNode.m */,
+				B8D913B418C32D08004921F0 /* ResultLayer.h */,
+				B8D913B518C32D08004921F0 /* ResultLayer.m */,
+				B81088C118BAB03D00F90511 /* PhysicsLayer.h */,
+				B81088C218BAB03D00F90511 /* PhysicsLayer.m */,
 				B81088BB18B976AA00F90511 /* PlayerNode.h */,
 				B81088BC18B976AA00F90511 /* PlayerNode.m */,
 				B8B1CCEB18C18A6800A77730 /* MeteoriteNode.h */,
@@ -1795,6 +1800,7 @@
 				B8B1CCED18C18A6800A77730 /* MeteoriteNode.m in Sources */,
 				B81086D818B970DD00F90511 /* ccShaders.m in Sources */,
 				B81087EC18B970DE00F90511 /* matrix.c in Sources */,
+				B8D913B618C32D08004921F0 /* ResultLayer.m in Sources */,
 				B81086FE18B970DD00F90511 /* CCTiledMapLayer.m in Sources */,
 				B810889218B970DF00F90511 /* GameScene.m in Sources */,
 				B81087F218B970DE00F90511 /* neon_matrix_impl.c in Sources */,
@@ -1829,7 +1835,7 @@
 				B810871518B970DD00F90511 /* CCES2Renderer.m in Sources */,
 				B81087E518B970DE00F90511 /* aabb.c in Sources */,
 				B810880F18B970DE00F90511 /* CCBsequence.m in Sources */,
-				B81088C318BAB03D00F90511 /* PhysicsNode.m in Sources */,
+				B81088C318BAB03D00F90511 /* PhysicsLayer.m in Sources */,
 				B810867018B970DD00F90511 /* CCLabelAtlas.m in Sources */,
 				B810870B18B970DD00F90511 /* cocos2d.m in Sources */,
 				B810879318B970DE00F90511 /* ALSource.m in Sources */,

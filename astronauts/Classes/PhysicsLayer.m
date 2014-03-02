@@ -5,14 +5,14 @@
 //  Created by Yoshikazu Oda on 2014/02/24.
 //  Copyright (c) 2014年 yoshinbo. All rights reserved.
 //
-
-#import "PhysicsNode.h"
+#import "GameScene.h"
+#import "PhysicsLayer.h"
 #import "PlayerNode.h"
 #import "MeteoriteNode.h"
 
 int addMeteoriteAfterDuration = 100;
 
-@implementation PhysicsNode
+@implementation PhysicsLayer
 {
     BOOL is_start;
     BOOL is_over;
@@ -26,7 +26,7 @@ int addMeteoriteAfterDuration = 100;
     CCLabelTTF *_scoreLabel;
 }
 
-- (PhysicsNode *)initWithContentSize:(CGSize)contentSize;
+- (PhysicsLayer *)initWithContentSize:(CGSize)contentSize;
 {
     self = [super init];
     if (self){
@@ -149,6 +149,9 @@ int addMeteoriteAfterDuration = 100;
 {
     is_start = FALSE;
     is_over = TRUE;
+
+    [[GameScene sharedInstance] gameOver];
+
 }
 
 @end

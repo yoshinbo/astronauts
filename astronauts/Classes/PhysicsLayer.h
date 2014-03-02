@@ -9,8 +9,8 @@
 #import "CCNode.h"
 #import "cocos2d.h"
 
-@interface PhysicsNode : CCNode <CCPhysicsCollisionDelegate>
+@interface PhysicsLayer : CCNode <CCPhysicsCollisionDelegate>
 
-- (PhysicsNode *)initWithContentSize:(CGSize)contentSize;
+- (PhysicsLayer *)initWithContentSize:(CGSize)contentSize;
 
 @end

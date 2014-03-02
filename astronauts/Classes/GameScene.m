@@ -9,7 +9,8 @@
 
 #import "GameScene.h"
 #import "IntroScene.h"
-#import "PhysicsNode.h"
+#import "PhysicsLayer.h"
+#import "ResultLayer.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - GameScene
@@ -20,13 +21,23 @@
     CCSprite *_sprite;
 }
 
+static GameScene *_scene = nil;
+
++ (GameScene *)sharedInstance {
+    return _scene;
+}
+
 // -----------------------------------------------------------------------
 #pragma mark - Create & Destroy
 // -----------------------------------------------------------------------
 
 + (GameScene *)scene
 {
-    return [[GameScene alloc] init];
+    if (_scene) {
+        _scene = nil;
+    }
+    _scene = [[GameScene alloc] init];
+    return _scene;
 }
 
 // -----------------------------------------------------------------------
@@ -54,16 +65,8 @@
     //[_sprite runAction:[CCActionRepeatForever actionWithAction:actionSpin]];
 
 
-    PhysicsNode *physics = [[PhysicsNode alloc]initWithContentSize:self.contentSize];
+    PhysicsLayer *physics = [[PhysicsLayer alloc]initWithContentSize:self.contentSize];
     [self addChild:physics];
-
-
-    // Create a back button
-    CCButton *backButton = [CCButton buttonWithTitle:@"[ Menu ]" fontName:@"Verdana-Bold" fontSize:18.0f];
-    backButton.positionType = CCPositionTypeNormalized;
-    backButton.position = ccp(0.85f, 0.95f); // Top Right of screen
-    [backButton setTarget:self selector:@selector(onBackClicked:)];
-    [self addChild:backButton];
 
     // done
 	return self;
@@ -99,16 +102,10 @@
     [super onExit];
 }
 
-// -----------------------------------------------------------------------
-#pragma mark - Button Callbacks
-// -----------------------------------------------------------------------
-
-- (void)onBackClicked:(id)sender
+- (void)gameOver
 {
-    // back to intro scene with transition
-    [[CCDirector sharedDirector] replaceScene:[IntroScene scene]
-                               withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:1.0f]];
+    ResultLayer *result = [[ResultLayer alloc] initWithContentSize:self.contentSize];
+    [self addChild:result];
 }
 
-// -----------------------------------------------------------------------
 @end
