@@ -51,7 +51,7 @@ int addMeteoriteAfterDuration = 100;
         // add physics node
         _physicsNode = [CCPhysicsNode node];
         _physicsNode.gravity = ccp(0,0);
-        _physicsNode.debugDraw = YES;
+        //_physicsNode.debugDraw = YES;
         _physicsNode.collisionDelegate = self;
         [self addChild:_physicsNode];
 

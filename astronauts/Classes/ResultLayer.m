@@ -12,7 +12,7 @@
 
 @implementation ResultLayer
 
-- (ResultLayer *)initWithContentSize:(CGSize)contentSize;
+- (ResultLayer *)initWithContentSize:(CGSize)contentSize
 {
     self = [super init];
 

@@ -11,6 +11,7 @@
 #import "IntroScene.h"
 #import "PhysicsLayer.h"
 #import "ResultLayer.h"
+#import "BackgroundLayer.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - GameScene
@@ -64,6 +65,8 @@ static GameScene *_scene = nil;
     //CCActionRotateBy* actionSpin = [CCActionRotateBy actionWithDuration:1.5f angle:360];
     //[_sprite runAction:[CCActionRepeatForever actionWithAction:actionSpin]];
 
+    BackgroundLayer *background = [[BackgroundLayer alloc]initWithContentSize:self.contentSize];
+    [self addChild:background];
 
     PhysicsLayer *physics = [[PhysicsLayer alloc]initWithContentSize:self.contentSize];
     [self addChild:physics];
