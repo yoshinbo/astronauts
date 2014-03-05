@@ -10,7 +10,6 @@
 
 @implementation BackgroundLayer
 
-
 - (BackgroundLayer *)initWithContentSize:(CGSize)contentSize
 {
     self = [super init];
@@ -19,24 +18,13 @@
 
         self.contentSize = contentSize;
 
-        CCSprite *background = [CCSprite spriteWithImageNamed:@"background.png"];
-        background.anchorPoint = ccp(0,0);
-
+        // Create a colored background (Dark Grey)
+        CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor blackColor]];
         [self addChild:background];
 
-        // Attuch movement to Monster
-        CCAction *actionMove = [CCActionMoveBy
-                                actionWithDuration:60 position:CGPointMake(
-                                                                            -background.contentSize.width,
-                                                                            0
-                                                                            )
-                                ];
-        CCAction *actionRemove = [CCActionRemove action];
-        [self runAction:[CCActionSequence actionWithArray:@[actionMove,actionRemove]]];
     }
 
     return self;
 }
-
 
 @end

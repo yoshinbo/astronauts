@@ -9,8 +9,10 @@
 #import "PhysicsLayer.h"
 #import "PlayerNode.h"
 #import "MeteoriteNode.h"
+#import "StartNode.h"
 
 int addMeteoriteAfterDuration = 100;
+int addStarAfterDuration = 10;
 
 @implementation PhysicsLayer
 {
@@ -19,6 +21,7 @@ int addMeteoriteAfterDuration = 100;
 
     int score;
     int frameSpentSinceLastMeteoriteAdded;
+    int frameSpentSinceLastStarAdded;
 
     PlayerNode  *_player;
     CCPhysicsNode *_physicsNode;
@@ -39,6 +42,7 @@ int addMeteoriteAfterDuration = 100;
 
         self.contentSize = contentSize;
         frameSpentSinceLastMeteoriteAdded = 0;
+        frameSpentSinceLastStarAdded = 0;
 
         // Score
         score = 0;
@@ -74,6 +78,15 @@ int addMeteoriteAfterDuration = 100;
 -(void) update:(CCTime)delta
 {
 
+    // for background
+    frameSpentSinceLastStarAdded++;
+    if (frameSpentSinceLastStarAdded == addStarAfterDuration) {
+        frameSpentSinceLastStarAdded = 0;
+        [self addStar];
+
+    }
+
+    // for game
     if (is_start) {
 
         [_player move:delta];
@@ -114,6 +127,12 @@ int addMeteoriteAfterDuration = 100;
     meteorite.physicsBody.collisionGroup = @"meteoriteGroup";
     meteorite.physicsBody.collisionType  = @"meteoriteCollision";
     [_physicsNode addChild:meteorite];
+}
+
+-(void) addStar
+{
+    StartNode *star = [[StartNode alloc] init];
+    [self addChild:star z:-1];
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair meteoriteCollision:(CCNode *)meteorite playerCollision:(CCNode *)player {
