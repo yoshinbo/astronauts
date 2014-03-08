@@ -8,7 +8,7 @@
 // -----------------------------------------------------------------------
 
 #import "GameScene.h"
-#import "IntroScene.h"
+#import "IntroLayer.h"
 #import "PhysicsLayer.h"
 #import "ResultLayer.h"
 #import "BackgroundLayer.h"
@@ -65,6 +65,9 @@ static GameScene *_scene = nil;
     //CCActionRotateBy* actionSpin = [CCActionRotateBy actionWithDuration:1.5f angle:360];
     //[_sprite runAction:[CCActionRepeatForever actionWithAction:actionSpin]];
 
+    IntroLayer *intro = [[IntroLayer alloc] initWithContentSize:self.contentSize];
+    [self addChild:intro z:0 name:@"intro"];
+
     BackgroundLayer *background = [[BackgroundLayer alloc]initWithContentSize:self.contentSize];
     [self addChild:background];
 
@@ -103,6 +106,14 @@ static GameScene *_scene = nil;
 {
     // always call super onExit last
     [super onExit];
+}
+
+- (void)gameStart
+{
+    CCNode *intro = [self getChildByName:@"intro" recursively:FALSE];
+    if (intro) {
+        [self removeChild:intro];
+    }
 }
 
 - (void)gameOver

@@ -7,7 +7,7 @@
 //
 
 #import "ResultLayer.h"
-#import "IntroScene.h"
+#import "GameScene.h"
 #import "PhysicsLayer.h"
 
 @implementation ResultLayer
@@ -45,7 +45,7 @@
 - (void)onBackClicked:(id)sender
 {
     // back to intro scene with transition
-    [[CCDirector sharedDirector] replaceScene:[IntroScene scene]
+    [[CCDirector sharedDirector] replaceScene:[GameScene scene]
                                withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:1.0f]];
 }
 

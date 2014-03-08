@@ -211,7 +211,6 @@
 		B810888B18B970DF00F90511 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B810888A18B970DF00F90511 /* main.m */; };
 		B810888F18B970DF00F90511 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B810888E18B970DF00F90511 /* AppDelegate.m */; };
 		B810889218B970DF00F90511 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B810889118B970DF00F90511 /* GameScene.m */; };
-		B810889518B970DF00F90511 /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B810889418B970DF00F90511 /* IntroScene.m */; };
 		B81088A418B970DF00F90511 /* fire.plist in Resources */ = {isa = PBXBuildFile; fileRef = B81088A318B970DF00F90511 /* fire.plist */; };
 		B81088A618B970DF00F90511 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = B81088A518B970DF00F90511 /* fire.png */; };
 		B81088A818B970DF00F90511 /* newton-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = B81088A718B970DF00F90511 /* newton-ipadhd.plist */; };
@@ -227,6 +226,7 @@
 		B8D913B618C32D08004921F0 /* ResultLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D913B518C32D08004921F0 /* ResultLayer.m */; };
 		B8FC3FE418C697EE00B66139 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = B8FC3FE318C697EE00B66139 /* star.png */; };
 		B8FC3FE718C6A43700B66139 /* StartNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FC3FE618C6A43700B66139 /* StartNode.m */; };
+		B8FC3FF418CAEBDB00B66139 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FC3FF318CAEBDB00B66139 /* IntroLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -666,8 +666,6 @@
 		B810888E18B970DF00F90511 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
 		B810889018B970DF00F90511 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Classes/GameScene.h; sourceTree = "<group>"; };
 		B810889118B970DF00F90511 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = Classes/GameScene.m; sourceTree = "<group>"; };
-		B810889318B970DF00F90511 /* IntroScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IntroScene.h; path = Classes/IntroScene.h; sourceTree = "<group>"; };
-		B810889418B970DF00F90511 /* IntroScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IntroScene.m; path = Classes/IntroScene.m; sourceTree = "<group>"; };
 		B81088A318B970DF00F90511 /* fire.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fire.plist; path = Resources/fire.plist; sourceTree = "<group>"; };
 		B81088A518B970DF00F90511 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fire.png; path = Resources/fire.png; sourceTree = "<group>"; };
 		B81088A718B970DF00F90511 /* newton-ipadhd.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "newton-ipadhd.plist"; path = "Resources/newton-ipadhd.plist"; sourceTree = "<group>"; };
@@ -689,6 +687,8 @@
 		B8FC3FE318C697EE00B66139 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		B8FC3FE518C6A43700B66139 /* StartNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartNode.h; path = Classes/StartNode.h; sourceTree = "<group>"; };
 		B8FC3FE618C6A43700B66139 /* StartNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartNode.m; path = Classes/StartNode.m; sourceTree = "<group>"; };
+		B8FC3FF218CAEBDB00B66139 /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroLayer.h; path = Classes/IntroLayer.h; sourceTree = "<group>"; };
+		B8FC3FF318CAEBDB00B66139 /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroLayer.m; path = Classes/IntroLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1587,8 +1587,6 @@
 			children = (
 				B810888D18B970DF00F90511 /* AppDelegate.h */,
 				B810888E18B970DF00F90511 /* AppDelegate.m */,
-				B810889318B970DF00F90511 /* IntroScene.h */,
-				B810889418B970DF00F90511 /* IntroScene.m */,
 				B810889018B970DF00F90511 /* GameScene.h */,
 				B810889118B970DF00F90511 /* GameScene.m */,
 				B8FC3FE218C68D3800B66139 /* Nodes */,
@@ -1600,6 +1598,8 @@
 		B8FC3FE118C68D1600B66139 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				B8FC3FF218CAEBDB00B66139 /* IntroLayer.h */,
+				B8FC3FF318CAEBDB00B66139 /* IntroLayer.m */,
 				B81088C118BAB03D00F90511 /* PhysicsLayer.h */,
 				B81088C218BAB03D00F90511 /* PhysicsLayer.m */,
 				B84F43DE18C356950009E709 /* BackgroundLayer.h */,
@@ -1734,6 +1734,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8FC3FF418CAEBDB00B66139 /* IntroLayer.m in Sources */,
 				B810869418B970DD00F90511 /* CCParticleBatchNode.m in Sources */,
 				B810880C18B970DE00F90511 /* CCBReader.m in Sources */,
 				B81087BC18B970DE00F90511 /* CCButton.m in Sources */,
@@ -1789,7 +1790,6 @@
 				B810874A18B970DE00F90511 /* NSThread+performBlock.m in Sources */,
 				B81086D518B970DD00F90511 /* CCShaderCache.m in Sources */,
 				B810881218B970DE00F90511 /* CCBSequenceProperty.m in Sources */,
-				B810889518B970DF00F90511 /* IntroScene.m in Sources */,
 				B810871918B970DD00F90511 /* CCGLView.m in Sources */,
 				B81086DC18B970DD00F90511 /* CCSprite.m in Sources */,
 				B8FC3FE718C6A43700B66139 /* StartNode.m in Sources */,

@@ -23,6 +23,7 @@
 + (GameScene *)sharedInstance;
 + (GameScene *)scene;
 - (id)init;
+- (void)gameStart;
 - (void)gameOver;
 
 // -----------------------------------------------------------------------

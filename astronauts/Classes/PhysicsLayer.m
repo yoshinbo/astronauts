@@ -160,6 +160,7 @@ static const int addStarAfterDuration = 10;
 {
     if (!is_over) {
         is_start = TRUE;
+        [[GameScene sharedInstance] gameStart];
     }
 }
 
