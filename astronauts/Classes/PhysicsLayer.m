@@ -62,9 +62,8 @@ int addStarAfterDuration = 10;
         // add player node
         _player = [[PlayerNode alloc]initWithPosition:
                    ccp(self.contentSize.width/3,self.contentSize.height/2)];
-        _player.physicsBody = [CCPhysicsBody bodyWithRect:CGRectMake(
-                                                                     -_player.contentSize.width/2,
-                                                                     -_player.contentSize.height/2,
+        _player.physicsBody = [CCPhysicsBody bodyWithRect:CGRectMake(0,
+                                                                     0,
                                                                      _player.contentSize.width,
                                                                      _player.contentSize.height) cornerRadius:0];
         _player.physicsBody.collisionGroup = @"playerGroup";
@@ -120,8 +119,8 @@ int addStarAfterDuration = 10;
 {
     MeteoriteNode *meteorite = [[MeteoriteNode alloc] init];
     meteorite.physicsBody = [CCPhysicsBody bodyWithRect:CGRectMake(
-                                                                   -meteorite.contentSize.width/2,
-                                                                   -meteorite.contentSize.height/2,
+                                                                   0,
+                                                                   0,
                                                                    meteorite.contentSize.width,
                                                                    meteorite.contentSize.height) cornerRadius:0];
     meteorite.physicsBody.collisionGroup = @"meteoriteGroup";

@@ -8,14 +8,15 @@
 
 #import "PlayerNode.h"
 
-const float jump_degree = 5.0;
-const float max_velocity = 10;
-
 @implementation PlayerNode
 {
     CGSize winSize;
     BOOL is_explosion;
 }
+
+static const float jump_degree = 5.0;
+static const float max_velocity = 10;
+static const float player_scale = 0.5;
 
 - (PlayerNode*) initWithPosition:(CGPoint)position
 {
@@ -28,7 +29,9 @@ const float max_velocity = 10;
 
         // init sprite
         _playerSprite = [CCSprite spriteWithImageNamed:@"Icon-72.png"];
-        _playerSprite.scale = 0.5;
+        _playerSprite.scale = player_scale;
+        _playerSprite.position = ccp(_playerSprite.contentSize.width*player_scale/2,
+                                     _playerSprite.contentSize.height*player_scale/2);
         [self addChild:_playerSprite];
 
         // init node

@@ -19,8 +19,10 @@
         self.contentSize = contentSize;
 
         // Create a colored background (Dark Grey)
-        CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor blackColor]];
-        [self addChild:background];
+        //CCSprite *background = [CCSprite spriteWithImageNamed:@"background.png"];
+        //CGSize winSize = [CCDirector sharedDirector].viewSize;
+        //background.position = CGPointMake(winSize.width/2, winSize.height /2);
+        //[self addChild:background];
 
     }
 

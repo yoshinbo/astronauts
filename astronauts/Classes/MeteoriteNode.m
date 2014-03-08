@@ -8,13 +8,13 @@
 
 #import "MeteoriteNode.h"
 
-int minDuration = 3.0;
-int maxDuration = 5.0;
-
 @implementation MeteoriteNode
 {
     CGSize winSize;
 }
+
+static const int minDuration = 3.0;
+static const int maxDuration = 5.0;
 
 - (MeteoriteNode *) init
 {
@@ -26,7 +26,8 @@ int maxDuration = 5.0;
 
         // init sprite
         _meteoriteSprite = [CCSprite spriteWithImageNamed:@"Icon-72.png"];
-        _meteoriteSprite.scale = 0.5;
+        _meteoriteSprite.position = ccp(_meteoriteSprite.contentSize.width/2,
+                                        _meteoriteSprite.contentSize.height/2);
         [self addChild:_meteoriteSprite];
 
         // Define a vertical range for the monster to spawn

@@ -5,7 +5,6 @@
 //  Created by Yoshikazu Oda on 2014/03/05.
 //  Copyright (c) 2014年 yoshinbo. All rights reserved.
 //
-
 #import "StartNode.h"
 
 @implementation StartNode
@@ -13,8 +12,11 @@
     CGSize winSize;
 }
 
-int minStarDuration = 3.0;
-int maxStarDuration = 5.0;
+static const int minDuration = 5.0;
+static const int maxDuration = 15.0;
+static const int minScale = 2;
+static const int maxScale = 10;
+
 
 - (StartNode *) init
 {
@@ -26,6 +28,11 @@ int maxStarDuration = 5.0;
 
         // init sprite
         CCSprite *star = [CCSprite spriteWithImageNamed:@"star.png"];
+
+        int rangeScale = maxScale - minScale;
+        int randomScale = (arc4random() % rangeScale) + minScale;
+        star.scale = (float)randomScale * 0.1;
+
         [self addChild:star];
 
         // Define a vertical range for the monster to spawn
@@ -46,8 +53,8 @@ int maxStarDuration = 5.0;
 
 - (void) shot
 {
-    int rangeDuration = maxStarDuration - minStarDuration;
-    int randomDuration = (arc4random() % rangeDuration) + minStarDuration;
+    int rangeDuration = maxDuration - minDuration;
+    int randomDuration = (arc4random() % rangeDuration) + minDuration;
     // Attuch movement to Monster
     CCAction *actionMove = [CCActionMoveBy
                             actionWithDuration:randomDuration position:CGPointMake(
