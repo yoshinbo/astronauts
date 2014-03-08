@@ -14,8 +14,9 @@
     BOOL is_explosion;
 }
 
+static const float acceleration_rate = 10.0f;
 static const float jump_degree = 5.0;
-static const float max_velocity = 10;
+static const float max_velocity = 11;
 static const float player_scale = 0.5;
 
 - (PlayerNode*) initWithPosition:(CGPoint)position
@@ -47,7 +48,7 @@ static const float player_scale = 0.5;
     if (!is_explosion) {
 
     // set acceleration
-    CGFloat acceleration = delta * 10.0f;
+    CGFloat acceleration = delta * acceleration_rate;
     if (fabs(_velocity_y) < max_velocity){
         _velocity_y -= acceleration;
     }

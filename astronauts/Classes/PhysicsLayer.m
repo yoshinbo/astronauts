@@ -11,9 +11,6 @@
 #import "MeteoriteNode.h"
 #import "StartNode.h"
 
-int addMeteoriteAfterDuration = 100;
-int addStarAfterDuration = 10;
-
 @implementation PhysicsLayer
 {
     BOOL is_start;
@@ -28,6 +25,9 @@ int addStarAfterDuration = 10;
 
     CCLabelTTF *_scoreLabel;
 }
+
+static const int addMeteoriteAfterDuration = 100;
+static const int addStarAfterDuration = 10;
 
 - (PhysicsLayer *)initWithContentSize:(CGSize)contentSize;
 {
@@ -61,7 +61,7 @@ int addStarAfterDuration = 10;
 
         // add player node
         _player = [[PlayerNode alloc]initWithPosition:
-                   ccp(self.contentSize.width/3,self.contentSize.height/2)];
+                   ccp(self.contentSize.width/4,self.contentSize.height/2)];
         _player.physicsBody = [CCPhysicsBody bodyWithRect:CGRectMake(0,
                                                                      0,
                                                                      _player.contentSize.width,
