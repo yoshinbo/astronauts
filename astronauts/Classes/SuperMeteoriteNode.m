@@ -1,22 +1,22 @@
 //
-//  MeteoriteNode.m
+//  SuperMeteorite.m
 //  astronauts
 //
-//  Created by Yoshikazu Oda on 2014/03/01.
+//  Created by Yoshikazu Oda on 2014/03/09.
 //  Copyright (c) 2014年 yoshinbo. All rights reserved.
 //
 
-#import "MeteoriteNode.h"
+#import "SuperMeteoriteNode.h"
 
-@implementation MeteoriteNode
+@implementation SuperMeteoriteNode
 {
     CGSize winSize;
 }
 
-static const int minDuration = 3.0;
-static const int maxDuration = 5.0;
+static const int minDuration = 2.0;
+static const int maxDuration = 3.0;
 
-- (MeteoriteNode *) init
+- (SuperMeteoriteNode *) init
 {
     self = [super init];
     if (self) {
@@ -25,7 +25,7 @@ static const int maxDuration = 5.0;
         winSize = [CCDirector sharedDirector].viewSize;
 
         // init sprite
-        _meteoriteSprite = [CCSprite spriteWithImageNamed:@"meteorite1.png"];
+        _meteoriteSprite = [CCSprite spriteWithImageNamed:@"meteorite2.png"];
         _meteoriteSprite.position = ccp(_meteoriteSprite.contentSize.width/2,
                                         _meteoriteSprite.contentSize.height/2);
         [self addChild:_meteoriteSprite];

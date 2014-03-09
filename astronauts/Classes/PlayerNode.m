@@ -29,7 +29,7 @@ static const float player_scale = 0.5;
         winSize = [CCDirector sharedDirector].viewSize;
 
         // init sprite
-        _playerSprite = [CCSprite spriteWithImageNamed:@"Icon-72.png"];
+        _playerSprite = [CCSprite spriteWithImageNamed:@"player.png"];
         _playerSprite.scale = player_scale;
         _playerSprite.position = ccp(_playerSprite.contentSize.width*player_scale/2,
                                      _playerSprite.contentSize.height*player_scale/2);

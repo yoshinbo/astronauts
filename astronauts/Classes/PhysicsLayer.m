@@ -9,7 +9,9 @@
 #import "PhysicsLayer.h"
 #import "PlayerNode.h"
 #import "MeteoriteNode.h"
+#import "SuperMeteoriteNode.h"
 #import "StartNode.h"
+#import "ShapeCache.h"
 
 @implementation PhysicsLayer
 {
@@ -18,16 +20,20 @@
 
     int score;
     int frameSpentSinceLastMeteoriteAdded;
+    int frameSpentSinceLastSuperMeteoriteAdded;
     int frameSpentSinceLastStarAdded;
 
     PlayerNode  *_player;
     CCPhysicsNode *_physicsNode;
 
     CCLabelTTF *_scoreLabel;
+    ShapeCache *_shapeCache;
 }
 
 static const int addMeteoriteAfterDuration = 100;
+static const int addSuperMeteoriteAfterDuration = 500;
 static const int addStarAfterDuration = 10;
+
 
 - (PhysicsLayer *)initWithContentSize:(CGSize)contentSize;
 {
@@ -43,6 +49,10 @@ static const int addStarAfterDuration = 10;
         self.contentSize = contentSize;
         frameSpentSinceLastMeteoriteAdded = 0;
         frameSpentSinceLastStarAdded = 0;
+
+        // Load plist which is made by PhysicsEditor.
+        //_shapeCache = [ShapeCache sharedShapeCache];
+        //[_shapeCache createCacheWithFile:@"Physics.plist"];
 
         // Score
         score = 0;
@@ -62,10 +72,12 @@ static const int addStarAfterDuration = 10;
         // add player node
         _player = [[PlayerNode alloc]initWithPosition:
                    ccp(self.contentSize.width/4,self.contentSize.height/2)];
+        //_player.physicsBody = [_shapeCache bodyWithName:@"player"];
         _player.physicsBody = [CCPhysicsBody bodyWithRect:CGRectMake(0,
                                                                      0,
                                                                      _player.contentSize.width,
-                                                                     _player.contentSize.height) cornerRadius:0];
+                                                                     _player.contentSize.height)
+                                             cornerRadius:0];
         _player.physicsBody.collisionGroup = @"playerGroup";
         _player.physicsBody.collisionType = @"playerCollision";
         [_physicsNode addChild:_player];
@@ -96,6 +108,11 @@ static const int addStarAfterDuration = 10;
             [self addMeteorite];
             [self addScore];
         }
+        frameSpentSinceLastSuperMeteoriteAdded++;
+        if (frameSpentSinceLastSuperMeteoriteAdded == addSuperMeteoriteAfterDuration) {
+            frameSpentSinceLastSuperMeteoriteAdded = 0;
+            [self addSuperMeteorite];
+        }
 
     }
 
@@ -115,17 +132,29 @@ static const int addStarAfterDuration = 10;
 
 }
 
--(void) addMeteorite
+-(void) meteoriteCreater:(CCNode *)meteorite
 {
-    MeteoriteNode *meteorite = [[MeteoriteNode alloc] init];
     meteorite.physicsBody = [CCPhysicsBody bodyWithRect:CGRectMake(
                                                                    0,
                                                                    0,
                                                                    meteorite.contentSize.width,
-                                                                   meteorite.contentSize.height) cornerRadius:0];
+                                                                   meteorite.contentSize.height)
+                                           cornerRadius:1];
     meteorite.physicsBody.collisionGroup = @"meteoriteGroup";
     meteorite.physicsBody.collisionType  = @"meteoriteCollision";
     [_physicsNode addChild:meteorite];
+}
+
+-(void) addMeteorite
+{
+    MeteoriteNode *meteorite = [[MeteoriteNode alloc] init];
+    [self meteoriteCreater:meteorite];
+}
+
+-(void) addSuperMeteorite
+{
+    SuperMeteoriteNode *meteorite = [[SuperMeteoriteNode alloc] init];
+    [self meteoriteCreater:meteorite];
 }
 
 -(void) addStar
