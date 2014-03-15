@@ -65,6 +65,12 @@ static GameScene *_scene = nil;
     //CCActionRotateBy* actionSpin = [CCActionRotateBy actionWithDuration:1.5f angle:360];
     //[_sprite runAction:[CCActionRepeatForever actionWithAction:actionSpin]];
 
+    // Sprites
+    CCSpriteBatchNode *spritesBgNode;
+    spritesBgNode = [CCSpriteBatchNode batchNodeWithFile:@"sprites.pvr.ccz"];
+    [self addChild:spritesBgNode];
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"sprites.plist"];
+
     IntroLayer *intro = [[IntroLayer alloc] initWithContentSize:self.contentSize];
     [self addChild:intro z:0 name:@"intro"];
 

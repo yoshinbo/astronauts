@@ -26,14 +26,14 @@
 
 #import "cocos2d.h"
 
-@interface ShapeCache : NSObject
+@interface PEShapeCache : NSObject
 
 // ShapeCache is a singleton, and this will return that single instance
-+(ShapeCache*)sharedShapeCache;
++(PEShapeCache*)sharedShapeCache;
 
 // reads the plist created with PE and creates a dictionary of body definitions
 // with shape definitions in tow
--(BOOL)createCacheWithFile:(NSString*)plist;
+-(BOOL)addPhysicsShapesWithFile:(NSString*)plist;
 
 // Returns a CCPhysicsBody with accompanying shapes as well as other physics
 // attributes

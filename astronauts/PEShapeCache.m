@@ -1,5 +1,5 @@
 //
-//  ShapeCache.m
+//  PEShapeCache.m
 //
 //  Created by James Meyer on 2/10/14.
 //
@@ -7,7 +7,7 @@
 //
 
 
-#import "ShapeCache.h"
+#import "PEShapeCache.h"
 
 static float area(CGPoint* verts, int vertCount) {
    
@@ -119,11 +119,11 @@ typedef enum {
 //***********************************************************************
 // this is where all the body definitions are stored once the plist
 // has been read and parsed.
-@implementation ShapeCache {
+@implementation PEShapeCache {
     NSMutableDictionary* _bodyNodes;
 }
 
-static ShapeCache* shapeCache = nil;
+static PEShapeCache* shapeCache = nil;
 
 -(id)init {
 	self = [super init];
@@ -134,8 +134,8 @@ static ShapeCache* shapeCache = nil;
     return self;
 }
 
-+(ShapeCache*)sharedShapeCache {
-	if(shapeCache == nil) shapeCache = [[ShapeCache alloc] init];
++(PEShapeCache*)sharedShapeCache {
+	if(shapeCache == nil) shapeCache = [[PEShapeCache alloc] init];
 
 	return shapeCache;
 }
@@ -234,7 +234,7 @@ static ShapeCache* shapeCache = nil;
 }
 
 
--(BOOL)createCacheWithFile:(NSString*)plist{
+-(BOOL)addPhysicsShapesWithFile:(NSString*)plist{
 	
     NSString *path = [[NSBundle mainBundle] pathForResource:plist ofType:nil inDirectory:nil];
 
@@ -343,7 +343,7 @@ static ShapeCache* shapeCache = nil;
                 
                 // iterate through the strings in the array and extract points
                 int vindex = 0;
-                for(NSString *pointString in polyVerts) {
+                for (NSString *pointString in polyVerts) {
                     CGPoint offset = CGPointFromString(pointString);
                     points[vindex].x = offset.x ;
                     points[vindex].y = offset.y ;
@@ -358,8 +358,8 @@ static ShapeCache* shapeCache = nil;
 
 				NSDictionary* circleData = [fData objectForKey:@"circle"];
 
+				fNode.center = CGPointFromString([circleData objectForKey:@"position"]);
 				fNode.radius = [[circleData objectForKey:@"radius"] floatValue];
-				fNode.center = CGPointFromString([fData objectForKey:@"center"]);
 			} else {
 				// unknown type
 				assert(0);

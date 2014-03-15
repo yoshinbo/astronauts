@@ -214,12 +214,13 @@
 		B81088A618B970DF00F90511 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = B81088A518B970DF00F90511 /* fire.png */; };
 		B81088BD18B976AA00F90511 /* PlayerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B81088BC18B976AA00F90511 /* PlayerNode.m */; };
 		B81088C318BAB03D00F90511 /* PhysicsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B81088C218BAB03D00F90511 /* PhysicsLayer.m */; };
+		B82967ED18D41263006FA9AC /* PEShapeCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B82967EC18D41263006FA9AC /* PEShapeCache.m */; };
+		B82967EF18D41473006FA9AC /* ccphysics.plist in Resources */ = {isa = PBXBuildFile; fileRef = B82967EE18D41473006FA9AC /* ccphysics.plist */; };
+		B82967FC18D4248A006FA9AC /* sprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = B82967F818D4248A006FA9AC /* sprites-hd.plist */; };
+		B82967FD18D4248A006FA9AC /* sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = B82967F918D4248A006FA9AC /* sprites-hd.pvr.ccz */; };
+		B82967FE18D4248A006FA9AC /* sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = B82967FA18D4248A006FA9AC /* sprites.plist */; };
+		B82967FF18D4248A006FA9AC /* sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = B82967FB18D4248A006FA9AC /* sprites.pvr.ccz */; };
 		B84F43E018C356950009E709 /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B84F43DF18C356950009E709 /* BackgroundLayer.m */; };
-		B8B1AFBE18CC152400363EAA /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B1AFBD18CC152400363EAA /* player.png */; };
-		B8B1AFC818CC46AF00363EAA /* Physics.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8B1AFC718CC46AF00363EAA /* Physics.plist */; };
-		B8B1AFCF18CC4C2500363EAA /* ShapeCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B1AFCE18CC4C2500363EAA /* ShapeCache.m */; };
-		B8B1AFD218CC513F00363EAA /* meteorite1.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B1AFD018CC513F00363EAA /* meteorite1.png */; };
-		B8B1AFD318CC513F00363EAA /* meteorite2.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B1AFD118CC513F00363EAA /* meteorite2.png */; };
 		B8B1AFD618CC586900363EAA /* SuperMeteoriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B1AFD518CC586900363EAA /* SuperMeteoriteNode.m */; };
 		B8B1CCED18C18A6800A77730 /* MeteoriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B1CCEC18C18A6800A77730 /* MeteoriteNode.m */; };
 		B8D913B618C32D08004921F0 /* ResultLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D913B518C32D08004921F0 /* ResultLayer.m */; };
@@ -670,14 +671,15 @@
 		B81088BC18B976AA00F90511 /* PlayerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerNode.m; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/PlayerNode.m; sourceTree = "<absolute>"; };
 		B81088C118BAB03D00F90511 /* PhysicsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhysicsLayer.h; path = Classes/PhysicsLayer.h; sourceTree = "<group>"; };
 		B81088C218BAB03D00F90511 /* PhysicsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhysicsLayer.m; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/PhysicsLayer.m; sourceTree = "<absolute>"; };
+		B82967EB18D41263006FA9AC /* PEShapeCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEShapeCache.h; sourceTree = "<group>"; };
+		B82967EC18D41263006FA9AC /* PEShapeCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEShapeCache.m; sourceTree = "<group>"; };
+		B82967EE18D41473006FA9AC /* ccphysics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ccphysics.plist; sourceTree = "<group>"; };
+		B82967F818D4248A006FA9AC /* sprites-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sprites-hd.plist"; sourceTree = "<group>"; };
+		B82967F918D4248A006FA9AC /* sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sprites-hd.pvr.ccz"; sourceTree = "<group>"; };
+		B82967FA18D4248A006FA9AC /* sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sprites.plist; sourceTree = "<group>"; };
+		B82967FB18D4248A006FA9AC /* sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = sprites.pvr.ccz; sourceTree = "<group>"; };
 		B84F43DE18C356950009E709 /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundLayer.h; path = Classes/BackgroundLayer.h; sourceTree = "<group>"; };
 		B84F43DF18C356950009E709 /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundLayer.m; path = Classes/BackgroundLayer.m; sourceTree = "<group>"; };
-		B8B1AFBD18CC152400363EAA /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
-		B8B1AFC718CC46AF00363EAA /* Physics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Physics.plist; sourceTree = "<group>"; };
-		B8B1AFCD18CC4C2500363EAA /* ShapeCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeCache.h; sourceTree = "<group>"; };
-		B8B1AFCE18CC4C2500363EAA /* ShapeCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeCache.m; sourceTree = "<group>"; };
-		B8B1AFD018CC513F00363EAA /* meteorite1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteorite1.png; sourceTree = "<group>"; };
-		B8B1AFD118CC513F00363EAA /* meteorite2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteorite2.png; sourceTree = "<group>"; };
 		B8B1AFD418CC586900363EAA /* SuperMeteoriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuperMeteoriteNode.h; path = Classes/SuperMeteoriteNode.h; sourceTree = "<group>"; };
 		B8B1AFD518CC586900363EAA /* SuperMeteoriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SuperMeteoriteNode.m; path = Classes/SuperMeteoriteNode.m; sourceTree = "<group>"; };
 		B8B1CCEB18C18A6800A77730 /* MeteoriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeteoriteNode.h; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/MeteoriteNode.h; sourceTree = "<absolute>"; };
@@ -760,10 +762,11 @@
 		B81085FE18B970DC00F90511 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B8B1AFD018CC513F00363EAA /* meteorite1.png */,
-				B8B1AFD118CC513F00363EAA /* meteorite2.png */,
-				B8B1AFC718CC46AF00363EAA /* Physics.plist */,
-				B8B1AFBD18CC152400363EAA /* player.png */,
+				B82967F818D4248A006FA9AC /* sprites-hd.plist */,
+				B82967F918D4248A006FA9AC /* sprites-hd.pvr.ccz */,
+				B82967FA18D4248A006FA9AC /* sprites.plist */,
+				B82967FB18D4248A006FA9AC /* sprites.pvr.ccz */,
+				B82967EE18D41473006FA9AC /* ccphysics.plist */,
 				B8FC3FE318C697EE00B66139 /* star.png */,
 				B81085FF18B970DC00F90511 /* Default.png */,
 				B810860118B970DC00F90511 /* Default@2x.png */,
@@ -1582,8 +1585,8 @@
 		B810888C18B970DF00F90511 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B8B1AFCD18CC4C2500363EAA /* ShapeCache.h */,
-				B8B1AFCE18CC4C2500363EAA /* ShapeCache.m */,
+				B82967EB18D41263006FA9AC /* PEShapeCache.h */,
+				B82967EC18D41263006FA9AC /* PEShapeCache.m */,
 				B810888D18B970DF00F90511 /* AppDelegate.h */,
 				B810888E18B970DF00F90511 /* AppDelegate.m */,
 				B810889018B970DF00F90511 /* GameScene.h */,
@@ -1693,28 +1696,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				B810860218B970DC00F90511 /* Default@2x.png in Resources */,
+				B82967FC18D4248A006FA9AC /* sprites-hd.plist in Resources */,
 				B810861518B970DC00F90511 /* Icon-120.png in Resources */,
-				B8B1AFC818CC46AF00363EAA /* Physics.plist in Resources */,
 				B810881918B970DE00F90511 /* LICENSE_CCBReader.txt in Resources */,
 				B810860B18B970DC00F90511 /* Icon@2x.png in Resources */,
 				B810861D18B970DC00F90511 /* Icon-Small@2x.png in Resources */,
 				B810860F18B970DC00F90511 /* Icon-72@2x.png in Resources */,
+				B82967FF18D4248A006FA9AC /* sprites.pvr.ccz in Resources */,
 				B810860018B970DC00F90511 /* Default.png in Resources */,
 				B810860918B970DC00F90511 /* Icon.png in Resources */,
 				B810861718B970DC00F90511 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
+				B82967FD18D4248A006FA9AC /* sprites-hd.pvr.ccz in Resources */,
 				B810861B18B970DC00F90511 /* Icon-Small.png in Resources */,
 				B810861918B970DC00F90511 /* Icon-Small-50.png in Resources */,
+				B82967FE18D4248A006FA9AC /* sprites.plist in Resources */,
 				B81088A418B970DF00F90511 /* fire.plist in Resources */,
-				B8B1AFD218CC513F00363EAA /* meteorite1.png in Resources */,
+				B82967EF18D41473006FA9AC /* ccphysics.plist in Resources */,
 				B81088A618B970DF00F90511 /* fire.png in Resources */,
 				B810880218B970DE00F90511 /* LICENSE_Kazmath.txt in Resources */,
 				B810860D18B970DC00F90511 /* Icon-72.png in Resources */,
 				B8FC3FE418C697EE00B66139 /* star.png in Resources */,
 				B810875B18B970DE00F90511 /* LICENSE_cocos2d.txt in Resources */,
-				B8B1AFD318CC513F00363EAA /* meteorite2.png in Resources */,
 				B810860418B970DC00F90511 /* Default-568h@2x.png in Resources */,
 				B810862418B970DC00F90511 /* iTunesArtwork in Resources */,
-				B8B1AFBE18CC152400363EAA /* player.png in Resources */,
 				B810861F18B970DC00F90511 /* Icon-Spotlight-iOS7.png in Resources */,
 				B810861318B970DC00F90511 /* Icon-76@2x.png in Resources */,
 				B810888718B970DF00F90511 /* LICENSE_Chipmunk.txt in Resources */,
@@ -1739,7 +1743,6 @@
 				B810876718B970DE00F90511 /* OALAudioActions.m in Sources */,
 				B81087AC18B970DE00F90511 /* NSMutableArray+WeakReferences.m in Sources */,
 				B810872618B970DD00F90511 /* CCGLView.m in Sources */,
-				B8B1AFCF18CC4C2500363EAA /* ShapeCache.m in Sources */,
 				B81087F018B970DE00F90511 /* mat4.c in Sources */,
 				B810864C18B970DD00F90511 /* CCAtlasNode.m in Sources */,
 				B810879A18B970DE00F90511 /* OpenALManager.m in Sources */,
@@ -1822,6 +1825,7 @@
 				B810878C18B970DE00F90511 /* ALListener.m in Sources */,
 				B810866518B970DD00F90511 /* ccFPSImages.m in Sources */,
 				B810873C18B970DE00F90511 /* ccUtils.c in Sources */,
+				B82967ED18D41263006FA9AC /* PEShapeCache.m in Sources */,
 				B81086AD18B970DD00F90511 /* CCPhysicsShape.m in Sources */,
 				B81086B518B970DD00F90511 /* CCRenderTexture.m in Sources */,
 				B810863B18B970DC00F90511 /* CCActionManager.m in Sources */,

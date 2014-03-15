@@ -11,7 +11,8 @@
 #import "MeteoriteNode.h"
 #import "SuperMeteoriteNode.h"
 #import "StartNode.h"
-#import "ShapeCache.h"
+#import "PEShapeCache.h"
+
 
 @implementation PhysicsLayer
 {
@@ -27,7 +28,7 @@
     CCPhysicsNode *_physicsNode;
 
     CCLabelTTF *_scoreLabel;
-    ShapeCache *_shapeCache;
+    PEShapeCache *_shapeCache;
 }
 
 static const int addMeteoriteAfterDuration = 100;
@@ -51,8 +52,8 @@ static const int addStarAfterDuration = 10;
         frameSpentSinceLastStarAdded = 0;
 
         // Load plist which is made by PhysicsEditor.
-        //_shapeCache = [ShapeCache sharedShapeCache];
-        //[_shapeCache createCacheWithFile:@"Physics.plist"];
+        _shapeCache = [PEShapeCache sharedShapeCache];
+        [_shapeCache addPhysicsShapesWithFile:@"ccphysics.plist"];
 
         // Score
         score = 0;

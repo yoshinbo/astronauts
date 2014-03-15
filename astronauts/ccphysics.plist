@@ -204,7 +204,7 @@
 			<key>player</key>
 			<dict>
 				<key>anchorpoint</key>
-                <string>{ 0.5100,0.5347 }</string>
+                <string>{ 0.0000,0.0069 }</string>
 				<key>fixtures</key>
 				<array>
 
@@ -222,45 +222,39 @@
 						<key>polygons</key>
 						<array>
 							<array>	
-								<string>{ 21.000,-51.000 }</string>	
-								<string>{ 21.000,-29.000 }</string>	
-								<string>{ -22.000,3.000 }</string>	
-								<string>{ -16.000,-50.000 }</string>
+								<string>{ 71.000,26.000 }</string>	
+								<string>{ 71.000,48.000 }</string>	
+								<string>{ 28.000,80.000 }</string>	
+								<string>{ 34.000,27.000 }</string>
 							</array>
 							<array>	
-								<string>{ 21.000,-29.000 }</string>	
-								<string>{ 23.000,-7.000 }</string>	
-								<string>{ -14.000,15.000 }</string>	
-								<string>{ -22.000,3.000 }</string>
+								<string>{ 71.000,48.000 }</string>	
+								<string>{ 73.000,70.000 }</string>	
+								<string>{ 70.000,82.000 }</string>	
+								<string>{ 29.000,91.000 }</string>	
+								<string>{ 28.000,80.000 }</string>
 							</array>
 							<array>	
-								<string>{ -25.000,25.000 }</string>	
-								<string>{ -14.000,15.000 }</string>	
-								<string>{ 23.000,-7.000 }</string>	
-								<string>{ -11.000,58.000 }</string>	
-								<string>{ -19.000,53.000 }</string>	
-								<string>{ -25.000,43.000 }</string>
+								<string>{ 80.000,119.000 }</string>	
+								<string>{ 74.000,130.000 }</string>	
+								<string>{ 64.000,134.000 }</string>	
+								<string>{ 47.000,137.000 }</string>	
+								<string>{ 74.000,102.000 }</string>
 							</array>
 							<array>	
-								<string>{ 24.000,53.000 }</string>	
-								<string>{ 19.000,52.000 }</string>	
-								<string>{ 13.000,13.000 }</string>	
-								<string>{ 24.000,25.000 }</string>	
-								<string>{ 30.000,34.000 }</string>	
-								<string>{ 30.000,42.000 }</string>
+								<string>{ 31.000,130.000 }</string>	
+								<string>{ 25.000,120.000 }</string>	
+								<string>{ 25.000,102.000 }</string>	
+								<string>{ 29.000,91.000 }</string>	
+								<string>{ 70.000,82.000 }</string>	
+								<string>{ 73.000,90.000 }</string>	
+								<string>{ 47.000,137.000 }</string>	
+								<string>{ 46.000,137.000 }</string>
 							</array>
 							<array>	
-								<string>{ 20.000,5.000 }</string>	
-								<string>{ 13.000,13.000 }</string>	
-								<string>{ 23.000,-7.000 }</string>
-							</array>
-							<array>	
-								<string>{ 8.000,60.000 }</string>	
-								<string>{ -4.000,60.000 }</string>	
-								<string>{ -11.000,58.000 }</string>	
-								<string>{ 13.000,13.000 }</string>	
-								<string>{ 19.000,52.000 }</string>	
-								<string>{ 14.000,57.000 }</string>
+								<string>{ 74.000,102.000 }</string>	
+								<string>{ 47.000,137.000 }</string>	
+								<string>{ 73.000,90.000 }</string>
 							</array>
 						</array>
                     </dict>

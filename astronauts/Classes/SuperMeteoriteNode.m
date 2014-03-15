@@ -15,6 +15,7 @@
 
 static const int minDuration = 2.0;
 static const int maxDuration = 3.0;
+static const float scale = 1.5;
 
 - (SuperMeteoriteNode *) init
 {
@@ -26,8 +27,9 @@ static const int maxDuration = 3.0;
 
         // init sprite
         _meteoriteSprite = [CCSprite spriteWithImageNamed:@"meteorite2.png"];
-        _meteoriteSprite.position = ccp(_meteoriteSprite.contentSize.width/2,
-                                        _meteoriteSprite.contentSize.height/2);
+        _meteoriteSprite.scale = scale;
+        _meteoriteSprite.position = ccp(_meteoriteSprite.contentSize.width*scale/2,
+                                        _meteoriteSprite.contentSize.height*scale/2);
         [self addChild:_meteoriteSprite];
 
         // Define a vertical range for the monster to spawn
