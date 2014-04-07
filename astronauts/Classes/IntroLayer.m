@@ -19,13 +19,20 @@
         self.contentSize = contentSize;
 
         // Label
-        CCLabelTTF *label = [CCLabelTTF labelWithString:@"Touch to Start!"
-                                               fontName:@"Marker Felt"
-                                               fontSize:30];
-        label.color = [CCColor whiteColor];
-        label.position = ccp(self.contentSize.width/2,
+        CCLabelBMFont* label1 = [[CCLabelBMFont alloc] initWithString:@"Bouncy"
+                                                             fntFile:@"font.fnt"];
+        label1.anchorPoint = ccp(0.5f, 0.5f);
+        label1.position = ccp(self.contentSize.width/2,
                              self.contentSize.height/4*3);
-        [self addChild:label];
+        CCLabelBMFont* label2 = [[CCLabelBMFont alloc] initWithString:@"Astronauts"
+                                                             fntFile:@"font.fnt"];
+        label2.anchorPoint = ccp(0.5f, 0.5f);
+        label2.position = ccp(self.contentSize.width/2,
+                             self.contentSize.height/4*3-45);
+        [self addChild:label1];
+        [self addChild:label2];
+        
+        
     }
 
     return self;

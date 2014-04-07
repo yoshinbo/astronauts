@@ -17,7 +17,7 @@
 static const float acceleration_rate = 10.0f;
 static const float jump_degree = 5.0;
 static const float max_velocity = 11;
-static const float player_scale = 0.5;
+static const float player_scale = 1.0;
 
 - (PlayerNode*) initWithPosition:(CGPoint)position
 {

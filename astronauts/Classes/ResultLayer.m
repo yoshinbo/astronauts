@@ -28,8 +28,9 @@
         [self addChild:backButton];
 
         // Label
-        CCLabelTTF *label = [CCLabelTTF labelWithString:@"Game Over" fontName:@"Marker Felt" fontSize:30];
-        label.color = [CCColor whiteColor];
+        CCLabelBMFont* label = [[CCLabelBMFont alloc] initWithString:@"Game Over"
+                                                              fntFile:@"font.fnt"];
+        label.anchorPoint = ccp(0.5f, 0.5f);
         label.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
         [self addChild:label];
 
@@ -46,7 +47,7 @@
 {
     // back to intro scene with transition
     [[CCDirector sharedDirector] replaceScene:[GameScene scene]
-                               withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:1.0f]];
+                               withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionUp duration:1.0f]];
 }
 
 // -----------------------------------------------------------------------

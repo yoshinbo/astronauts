@@ -27,7 +27,7 @@
     PlayerNode  *_player;
     CCPhysicsNode *_physicsNode;
 
-    CCLabelTTF *_scoreLabel;
+    CCLabelBMFont *_scoreLabel;
     PEShapeCache *_shapeCache;
 }
 
@@ -52,21 +52,13 @@ static const int addStarAfterDuration = 10;
         frameSpentSinceLastStarAdded = 0;
 
         // Load plist which is made by PhysicsEditor.
-        _shapeCache = [PEShapeCache sharedShapeCache];
-        [_shapeCache addPhysicsShapesWithFile:@"ccphysics.plist"];
-
-        // Score
-        score = 0;
-        NSString *targetString = [NSString stringWithFormat:@"%d",score];
-        _scoreLabel = [CCLabelTTF labelWithString:targetString fontName:@"Marker Felt" fontSize:30];
-        _scoreLabel.color = [CCColor whiteColor];
-        _scoreLabel.position = ccp(self.contentSize.width/2, self.contentSize.height*0.95f);
-        [self addChild:_scoreLabel];
+        //_shapeCache = [PEShapeCache sharedShapeCache];
+        //[_shapeCache addPhysicsShapesWithFile:@"ccphysics.plist"];
 
         // add physics node
         _physicsNode = [CCPhysicsNode node];
         _physicsNode.gravity = ccp(0,0);
-        //_physicsNode.debugDraw = YES;
+        _physicsNode.debugDraw = YES;
         _physicsNode.collisionDelegate = self;
         [self addChild:_physicsNode];
 
@@ -191,6 +183,15 @@ static const int addStarAfterDuration = 10;
     if (!is_over) {
         is_start = TRUE;
         [[GameScene sharedInstance] gameStart];
+        
+        // Score
+        score = 0;
+        NSString *targetString = [NSString stringWithFormat:@"%d",score];
+        _scoreLabel = [[CCLabelBMFont alloc] initWithString:targetString
+                                                             fntFile:@"font.fnt"];
+        _scoreLabel.color = [CCColor whiteColor];
+        _scoreLabel.position = ccp(self.contentSize.width/2, self.contentSize.height*0.95f);
+        [self addChild:_scoreLabel];
     }
 }
 
