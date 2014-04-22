@@ -21,7 +21,7 @@ static const float player_scale = 1.0;
 
 - (PlayerNode*) initWithPosition:(CGPoint)position
 {
-    self = [super init];
+    self = [super initWithImageNamed:@"player.png"];
     if (self) {
 
         // init values
@@ -29,15 +29,8 @@ static const float player_scale = 1.0;
         winSize = [CCDirector sharedDirector].viewSize;
 
         // init sprite
-        _playerSprite = [CCSprite spriteWithImageNamed:@"player.png"];
-        _playerSprite.scale = player_scale;
-        _playerSprite.position = ccp(_playerSprite.contentSize.width*player_scale/2,
-                                     _playerSprite.contentSize.height*player_scale/2);
-        [self addChild:_playerSprite];
-
-        // init node
+        self.scale = player_scale;
         self.position = position;
-        self.contentSize = [_playerSprite boundingBox].size;
         self.anchorPoint = ccp(0.5, 0.5);
     }
     return self;

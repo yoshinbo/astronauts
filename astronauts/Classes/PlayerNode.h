@@ -9,9 +9,8 @@
 #import "CCNode.h"
 #import "cocos2d.h"
 
-@interface PlayerNode : CCNode
+@interface PlayerNode : CCSprite
 
-@property CCSprite *playerSprite;
 @property CGFloat velocity_y;
 
 - (PlayerNode *)initWithPosition:(CGPoint)position;

@@ -15,32 +15,25 @@
 
 static const int minDuration = 2.0;
 static const int maxDuration = 3.0;
-static const float scale = 1.5;
+static const float scale = 2.0;
 
 - (SuperMeteoriteNode *) init
 {
-    self = [super init];
+    self = [super initWithImageNamed:@"meteorite2.png"];
     if (self) {
 
         // init values
         winSize = [CCDirector sharedDirector].viewSize;
 
-        // init sprite
-        _meteoriteSprite = [CCSprite spriteWithImageNamed:@"meteorite2.png"];
-        _meteoriteSprite.scale = scale;
-        _meteoriteSprite.position = ccp(_meteoriteSprite.contentSize.width*scale/2,
-                                        _meteoriteSprite.contentSize.height*scale/2);
-        [self addChild:_meteoriteSprite];
+        self.scale = scale;
 
         // Define a vertical range for the monster to spawn
-        int minY = _meteoriteSprite.contentSize.height / 2;
-        int maxY = winSize.height - _meteoriteSprite.contentSize.height / 2;
+        int minY = self.contentSize.height / 2;
+        int maxY = winSize.height - self.contentSize.height / 2;
         int rangeY = maxY - minY;
         int randomY = (arc4random() % rangeY) + minY;
 
-        // init node
-        self.position = ccp(winSize.width + _meteoriteSprite.contentSize.width/2, randomY);
-        self.contentSize = [_meteoriteSprite boundingBox].size;
+        self.position = ccp(winSize.width + self.contentSize.width/2, randomY);
         self.anchorPoint = ccp(0.5, 0.5);
 
         [self shot];

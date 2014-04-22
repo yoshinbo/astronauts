@@ -8,9 +8,7 @@
 
 #import "cocos2d.h"
 
-@interface MeteoriteNode : CCNode
-
-@property CCSprite *meteoriteSprite;
+@interface MeteoriteNode : CCSprite
 
 - (MeteoriteNode *)init;
 

@@ -8,9 +8,7 @@
 #import "cocos2d.h"
 #import "CCNode.h"
 
-@interface SuperMeteoriteNode : CCNode
-
-@property CCSprite *meteoriteSprite;
+@interface SuperMeteoriteNode : CCSprite
 
 - (SuperMeteoriteNode *)init;
 

@@ -11,8 +11,6 @@
 #import "MeteoriteNode.h"
 #import "SuperMeteoriteNode.h"
 #import "StartNode.h"
-#import "PEShapeCache.h"
-
 
 @implementation PhysicsLayer
 {
@@ -28,7 +26,6 @@
     CCPhysicsNode *_physicsNode;
 
     CCLabelBMFont *_scoreLabel;
-    PEShapeCache *_shapeCache;
 }
 
 static const int addMeteoriteAfterDuration = 100;
@@ -156,7 +153,7 @@ static const int addStarAfterDuration = 10;
     [self addChild:star z:-1];
 }
 
-- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair meteoriteCollision:(CCNode *)meteorite playerCollision:(CCNode *)player {
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair meteoriteCollision:(MeteoriteNode *)meteorite playerCollision:(PlayerNode *)player {
 
     CGPoint point = player.position;
     [player removeFromParent];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B80989DF1906AB810012CAD4 /* GCCShapeCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B80989DE1906AB810012CAD4 /* GCCShapeCache.m */; };
 		B81085E618B970DC00F90511 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B81085E518B970DC00F90511 /* QuartzCore.framework */; };
 		B81085E818B970DC00F90511 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B81085E718B970DC00F90511 /* OpenGLES.framework */; };
 		B81085EA18B970DC00F90511 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B81085E918B970DC00F90511 /* OpenAL.framework */; };
@@ -214,7 +215,6 @@
 		B81088A618B970DF00F90511 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = B81088A518B970DF00F90511 /* fire.png */; };
 		B81088BD18B976AA00F90511 /* PlayerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B81088BC18B976AA00F90511 /* PlayerNode.m */; };
 		B81088C318BAB03D00F90511 /* PhysicsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B81088C218BAB03D00F90511 /* PhysicsLayer.m */; };
-		B82967ED18D41263006FA9AC /* PEShapeCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B82967EC18D41263006FA9AC /* PEShapeCache.m */; };
 		B82967EF18D41473006FA9AC /* ccphysics.plist in Resources */ = {isa = PBXBuildFile; fileRef = B82967EE18D41473006FA9AC /* ccphysics.plist */; };
 		B82967FC18D4248A006FA9AC /* sprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = B82967F818D4248A006FA9AC /* sprites-hd.plist */; };
 		B82967FD18D4248A006FA9AC /* sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = B82967F918D4248A006FA9AC /* sprites-hd.pvr.ccz */; };
@@ -242,6 +242,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B80989DD1906AB810012CAD4 /* GCCShapeCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCCShapeCache.h; sourceTree = "<group>"; };
+		B80989DE1906AB810012CAD4 /* GCCShapeCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCCShapeCache.m; sourceTree = "<group>"; };
 		B81085E218B970DC00F90511 /* astronauts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = astronauts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B81085E518B970DC00F90511 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B81085E718B970DC00F90511 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -673,8 +675,6 @@
 		B81088BC18B976AA00F90511 /* PlayerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerNode.m; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/PlayerNode.m; sourceTree = "<absolute>"; };
 		B81088C118BAB03D00F90511 /* PhysicsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhysicsLayer.h; path = Classes/PhysicsLayer.h; sourceTree = "<group>"; };
 		B81088C218BAB03D00F90511 /* PhysicsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhysicsLayer.m; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/PhysicsLayer.m; sourceTree = "<absolute>"; };
-		B82967EB18D41263006FA9AC /* PEShapeCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEShapeCache.h; sourceTree = "<group>"; };
-		B82967EC18D41263006FA9AC /* PEShapeCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEShapeCache.m; sourceTree = "<group>"; };
 		B82967EE18D41473006FA9AC /* ccphysics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ccphysics.plist; sourceTree = "<group>"; };
 		B82967F818D4248A006FA9AC /* sprites-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sprites-hd.plist"; sourceTree = "<group>"; };
 		B82967F918D4248A006FA9AC /* sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sprites-hd.pvr.ccz"; sourceTree = "<group>"; };
@@ -718,6 +718,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B80989DC1906AB5B0012CAD4 /* GCCShapeCache */ = {
+			isa = PBXGroup;
+			children = (
+				B80989DD1906AB810012CAD4 /* GCCShapeCache.h */,
+				B80989DE1906AB810012CAD4 /* GCCShapeCache.m */,
+			);
+			name = GCCShapeCache;
+			sourceTree = "<group>";
+		};
 		B81085D918B970DC00F90511 = {
 			isa = PBXGroup;
 			children = (
@@ -810,6 +819,7 @@
 		B810862718B970DC00F90511 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				B80989DC1906AB5B0012CAD4 /* GCCShapeCache */,
 				B810875A18B970DE00F90511 /* LICENSE_cocos2d.txt */,
 				B810880118B970DE00F90511 /* LICENSE_Kazmath.txt */,
 				B810881818B970DE00F90511 /* LICENSE_CCBReader.txt */,
@@ -1591,8 +1601,6 @@
 		B810888C18B970DF00F90511 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B82967EB18D41263006FA9AC /* PEShapeCache.h */,
-				B82967EC18D41263006FA9AC /* PEShapeCache.m */,
 				B810888D18B970DF00F90511 /* AppDelegate.h */,
 				B810888E18B970DF00F90511 /* AppDelegate.m */,
 				B810889018B970DF00F90511 /* GameScene.h */,
@@ -1826,6 +1834,7 @@
 				B8B1AFD618CC586900363EAA /* SuperMeteoriteNode.m in Sources */,
 				B810867E18B970DD00F90511 /* CCLayout.m in Sources */,
 				B81087A118B970DE00F90511 /* OALSuspendHandler.m in Sources */,
+				B80989DF1906AB810012CAD4 /* GCCShapeCache.m in Sources */,
 				B810880018B970DE00F90511 /* vec4.c in Sources */,
 				B810871218B970DD00F90511 /* CCDirectorIOS.m in Sources */,
 				B81086E918B970DD00F90511 /* CCSpriteFrameCache.m in Sources */,
@@ -1833,7 +1842,6 @@
 				B810878C18B970DE00F90511 /* ALListener.m in Sources */,
 				B810866518B970DD00F90511 /* ccFPSImages.m in Sources */,
 				B810873C18B970DE00F90511 /* ccUtils.c in Sources */,
-				B82967ED18D41263006FA9AC /* PEShapeCache.m in Sources */,
 				B81086AD18B970DD00F90511 /* CCPhysicsShape.m in Sources */,
 				B81086B518B970DD00F90511 /* CCRenderTexture.m in Sources */,
 				B810863B18B970DC00F90511 /* CCActionManager.m in Sources */,
