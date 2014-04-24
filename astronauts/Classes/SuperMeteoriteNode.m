@@ -15,7 +15,7 @@
 
 static const int minDuration = 2.0;
 static const int maxDuration = 3.0;
-static const float scale = 2.0;
+static const float scale = 1.0;
 
 - (SuperMeteoriteNode *) init
 {

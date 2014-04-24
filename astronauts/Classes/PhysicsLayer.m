@@ -11,6 +11,7 @@
 #import "MeteoriteNode.h"
 #import "SuperMeteoriteNode.h"
 #import "StartNode.h"
+#import "GCCShapeCache.h"
 
 @implementation PhysicsLayer
 {
@@ -48,26 +49,20 @@ static const int addStarAfterDuration = 10;
         frameSpentSinceLastMeteoriteAdded = 0;
         frameSpentSinceLastStarAdded = 0;
 
-        // Load plist which is made by PhysicsEditor.
-        //_shapeCache = [PEShapeCache sharedShapeCache];
-        //[_shapeCache addPhysicsShapesWithFile:@"ccphysics.plist"];
+        // Load shapes
+        [[GCCShapeCache sharedShapeCache] addShapesWithFile:@"ccphysics.plist"];
 
         // add physics node
         _physicsNode = [CCPhysicsNode node];
         _physicsNode.gravity = ccp(0,0);
-        _physicsNode.debugDraw = YES;
+        //_physicsNode.debugDraw = YES;
         _physicsNode.collisionDelegate = self;
         [self addChild:_physicsNode];
 
         // add player node
         _player = [[PlayerNode alloc]initWithPosition:
                    ccp(self.contentSize.width/4,self.contentSize.height/2)];
-        //_player.physicsBody = [_shapeCache bodyWithName:@"player"];
-        _player.physicsBody = [CCPhysicsBody bodyWithRect:CGRectMake(0,
-                                                                     0,
-                                                                     _player.contentSize.width,
-                                                                     _player.contentSize.height)
-                                             cornerRadius:0];
+        [[GCCShapeCache sharedShapeCache] setBodyWithName:@"player" onNode:_player];
         _player.physicsBody.collisionGroup = @"playerGroup";
         _player.physicsBody.collisionType = @"playerCollision";
         [_physicsNode addChild:_player];
@@ -122,14 +117,9 @@ static const int addStarAfterDuration = 10;
 
 }
 
--(void) meteoriteCreater:(CCNode *)meteorite
+-(void) meteoriteCreater:(CCNode *)meteorite withType:(NSString*)type
 {
-    meteorite.physicsBody = [CCPhysicsBody bodyWithRect:CGRectMake(
-                                                                   0,
-                                                                   0,
-                                                                   meteorite.contentSize.width,
-                                                                   meteorite.contentSize.height)
-                                           cornerRadius:1];
+    [[GCCShapeCache sharedShapeCache] setBodyWithName:type onNode:meteorite];
     meteorite.physicsBody.collisionGroup = @"meteoriteGroup";
     meteorite.physicsBody.collisionType  = @"meteoriteCollision";
     [_physicsNode addChild:meteorite];
@@ -138,13 +128,13 @@ static const int addStarAfterDuration = 10;
 -(void) addMeteorite
 {
     MeteoriteNode *meteorite = [[MeteoriteNode alloc] init];
-    [self meteoriteCreater:meteorite];
+    [self meteoriteCreater:meteorite withType:@"meteorite1"];
 }
 
 -(void) addSuperMeteorite
 {
     SuperMeteoriteNode *meteorite = [[SuperMeteoriteNode alloc] init];
-    [self meteoriteCreater:meteorite];
+    [self meteoriteCreater:meteorite withType:@"meteorite2"];
 }
 
 -(void) addStar
