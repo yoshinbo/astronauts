@@ -7,6 +7,7 @@
 //
 
 #import "IntroLayer.h"
+#import "GameScene.h"
 
 @implementation IntroLayer
 
@@ -18,7 +19,7 @@
 
         self.contentSize = contentSize;
 
-        // Label
+        // Title Label
         CCLabelBMFont* label1 = [[CCLabelBMFont alloc] initWithString:@"Bouncy"
                                                              fntFile:@"font.fnt"];
         label1.anchorPoint = ccp(0.5f, 0.5f);
@@ -32,6 +33,13 @@
         [self addChild:label1];
         [self addChild:label2];
         
+        // Best Score
+        int bestScore = [GameScene getBestScore];
+        CCLabelTTF *bestScoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Best Score: %d", bestScore] fontName:@"Verdana-Bold" fontSize:18.0f];
+        bestScoreLabel.anchorPoint = ccp(0.5f, 0.5f);
+        bestScoreLabel.position = ccp(self.contentSize.width/2,
+                              self.contentSize.height/8*3-45);
+        [self addChild:bestScoreLabel];
         
     }
 

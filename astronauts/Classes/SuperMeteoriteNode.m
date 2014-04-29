@@ -31,7 +31,7 @@ static const float scale = 1.0;
         int minY = self.contentSize.height / 2;
         int maxY = winSize.height - self.contentSize.height / 2;
         int rangeY = maxY - minY;
-        int randomY = (arc4random() % rangeY) + minY;
+        int randomY = arc4random_uniform(rangeY) + minY;
 
         self.position = ccp(winSize.width + self.contentSize.width/2, randomY);
         self.anchorPoint = ccp(0.5, 0.5);

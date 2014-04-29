@@ -39,7 +39,7 @@ static const int maxScale = 10;
         int minY = star.contentSize.height / 2;
         int maxY = winSize.height - star.contentSize.height / 2;
         int rangeY = maxY - minY;
-        int randomY = (arc4random() % rangeY) + minY;
+        int randomY = arc4random_uniform(rangeY) + minY;
 
         // init node
         self.position = ccp(winSize.width + star.contentSize.width/2, randomY);

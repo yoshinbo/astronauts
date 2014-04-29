@@ -12,7 +12,7 @@
 
 @implementation ResultLayer
 
-- (ResultLayer *)initWithContentSize:(CGSize)contentSize
+- (ResultLayer *)initWithContentSize:(CGSize)contentSize :(int)score :(BOOL)isBest
 {
     self = [super init];
 
@@ -34,6 +34,14 @@
         label.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
         [self addChild:label];
 
+        // Best Score
+        if (isBest) {
+            CCLabelTTF *bestScoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Best Score: %d", score] fontName:@"Verdana-Bold" fontSize:18.0f];
+            bestScoreLabel.anchorPoint = ccp(0.5f, 0.5f);
+            bestScoreLabel.position = ccp(self.contentSize.width/2,
+                                          self.contentSize.height/8*3-45);
+            [self addChild:bestScoreLabel];
+        }
     }
 
     return self;

@@ -22,6 +22,7 @@
     int frameSpentSinceLastMeteoriteAdded;
     int frameSpentSinceLastSuperMeteoriteAdded;
     int frameSpentSinceLastStarAdded;
+    int frameSpentSinceLastScoreAdded;
 
     PlayerNode  *_player;
     CCPhysicsNode *_physicsNode;
@@ -29,8 +30,9 @@
     CCLabelBMFont *_scoreLabel;
 }
 
-static const int addMeteoriteAfterDuration = 100;
+static const int addMeteoriteAfterDuration = 80;
 static const int addSuperMeteoriteAfterDuration = 500;
+static const int addScoreAfterDuration = 100;
 static const int addStarAfterDuration = 10;
 
 
@@ -91,14 +93,17 @@ static const int addStarAfterDuration = 10;
         if (frameSpentSinceLastMeteoriteAdded == addMeteoriteAfterDuration) {
             frameSpentSinceLastMeteoriteAdded = 0;
             [self addMeteorite];
-            [self addScore];
         }
         frameSpentSinceLastSuperMeteoriteAdded++;
         if (frameSpentSinceLastSuperMeteoriteAdded == addSuperMeteoriteAfterDuration) {
             frameSpentSinceLastSuperMeteoriteAdded = 0;
             [self addSuperMeteorite];
         }
-
+        frameSpentSinceLastScoreAdded++;
+        if (frameSpentSinceLastScoreAdded == addScoreAfterDuration) {
+            frameSpentSinceLastScoreAdded = 0;
+            [self addScore];
+        }
     }
 
 }
@@ -187,7 +192,7 @@ static const int addStarAfterDuration = 10;
     is_start = FALSE;
     is_over = TRUE;
 
-    [[GameScene sharedInstance] gameOver];
+    [[GameScene sharedInstance] gameOver:score];
 
 }
 

@@ -10,5 +10,5 @@
 
 @interface ResultLayer : CCNode
 
-- (ResultLayer *)initWithContentSize:(CGSize)contentSize;
+- (ResultLayer *)initWithContentSize:(CGSize)contentSize :(int)score :(BOOL)isBest;
 @end

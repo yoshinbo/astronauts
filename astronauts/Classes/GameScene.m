@@ -122,10 +122,43 @@ static GameScene *_scene = nil;
     }
 }
 
-- (void)gameOver
+- (void)gameOver:(int)score
 {
-    ResultLayer *result = [[ResultLayer alloc] initWithContentSize:self.contentSize];
+    bool isBest = [GameScene updateBestScore:score];
+    ResultLayer *result = [[ResultLayer alloc] initWithContentSize:self.contentSize :score :isBest];
     [self addChild:result];
+}
+
+// plistのデータを取得する
++ (NSString *)getDataPlistPass
+{
+    return [[NSBundle mainBundle] pathForResource:@"data" ofType:@"plist"];
+}
+
++ (NSDictionary*)getDataPlist
+{
+    NSString *path = [self getDataPlistPass];
+    return [NSMutableDictionary dictionaryWithContentsOfFile:path];
+}
+
++ (int)getBestScore
+{
+    NSDictionary *dictionary = [self getDataPlist];
+    return [[dictionary objectForKey:@"BestScore"] intValue];
+}
+
++ (bool)updateBestScore:(int)newScore
+{
+    bool isBest = false;
+    NSDictionary *dictionary = [self getDataPlist];
+    int score = [[dictionary objectForKey:@"BestScore"] intValue];
+    if (newScore > score) {
+        [dictionary setValue:[NSNumber numberWithInteger:newScore] forKey:@"BestScore"];
+        [dictionary writeToFile:[self getDataPlistPass] atomically:YES];
+        score = newScore;
+        isBest = true;
+    }
+    return isBest;
 }
 
 @end

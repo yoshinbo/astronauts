@@ -226,6 +226,7 @@
 		B8EA70071909505000A4361C /* sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8EA70031909505000A4361C /* sprites.plist */; };
 		B8EA70081909505000A4361C /* sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = B8EA70041909505000A4361C /* sprites.png */; };
 		B8EA700A1909505800A4361C /* ccphysics.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8EA70091909505800A4361C /* ccphysics.plist */; };
+		B8EA700C190F41D300A4361C /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8EA700B190F41D300A4361C /* data.plist */; };
 		B8FC3FE718C6A43700B66139 /* StartNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FC3FE618C6A43700B66139 /* StartNode.m */; };
 		B8FC3FF418CAEBDB00B66139 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FC3FF318CAEBDB00B66139 /* IntroLayer.m */; };
 /* End PBXBuildFile section */
@@ -689,6 +690,7 @@
 		B8EA70031909505000A4361C /* sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sprites.plist; sourceTree = "<group>"; };
 		B8EA70041909505000A4361C /* sprites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprites.png; sourceTree = "<group>"; };
 		B8EA70091909505800A4361C /* ccphysics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ccphysics.plist; sourceTree = "<group>"; };
+		B8EA700B190F41D300A4361C /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		B8FC3FE518C6A43700B66139 /* StartNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartNode.h; path = Classes/StartNode.h; sourceTree = "<group>"; };
 		B8FC3FE618C6A43700B66139 /* StartNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartNode.m; path = Classes/StartNode.m; sourceTree = "<group>"; };
 		B8FC3FF218CAEBDB00B66139 /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroLayer.h; path = Classes/IntroLayer.h; sourceTree = "<group>"; };
@@ -773,6 +775,7 @@
 		B81085FE18B970DC00F90511 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B8EA700B190F41D300A4361C /* data.plist */,
 				B8EA70091909505800A4361C /* ccphysics.plist */,
 				B8EA70011909505000A4361C /* sprites-hd.plist */,
 				B8EA70021909505000A4361C /* sprites-hd.png */,
@@ -1718,6 +1721,7 @@
 				B810860918B970DC00F90511 /* Icon.png in Resources */,
 				B8EA70061909505000A4361C /* sprites-hd.png in Resources */,
 				B810861718B970DC00F90511 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
+				B8EA700C190F41D300A4361C /* data.plist in Resources */,
 				B810861B18B970DC00F90511 /* Icon-Small.png in Resources */,
 				B810861918B970DC00F90511 /* Icon-Small-50.png in Resources */,
 				B8EA70071909505000A4361C /* sprites.plist in Resources */,

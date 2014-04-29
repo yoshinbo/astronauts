@@ -24,7 +24,10 @@
 + (GameScene *)scene;
 - (id)init;
 - (void)gameStart;
-- (void)gameOver;
+- (void)gameOver:(int)score;
++ (NSDictionary*)getDataPlist;
++ (int)getBestScore;
++ (bool)updateBestScore:(int)newScore;
 
 // -----------------------------------------------------------------------
 @end
