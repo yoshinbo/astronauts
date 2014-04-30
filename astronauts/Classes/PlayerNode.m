@@ -47,9 +47,9 @@ static const float player_scale = 0.5;
     }
 
     // set position
-    if (self.position.y <= -self.contentSize.height * 0.5) {
+    if (self.position.y <= -self.contentSize.height * 0.4) {
         self.position = ccp(self.position.x, winSize.height + self.contentSize.height * 0.4);
-    } else if (self.position.y >= winSize.height + self.contentSize.height) {
+    } else if (self.position.y > winSize.height + self.contentSize.height*0.4) {
         self.position = ccp(self.position.x, 0 - self.contentSize.height * 0.4);
     } else {
         self.position = ccpAdd(self.position, ccp(0,_velocity_y));
