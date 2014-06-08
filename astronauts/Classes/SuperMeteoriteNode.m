@@ -54,6 +54,10 @@ static const float scale = 1.0;
                             ];
     CCAction *actionRemove = [CCActionRemove action];
     [self runAction:[CCActionSequence actionWithArray:@[actionMove,actionRemove]]];
+    
+    // se
+    [[OALSimpleAudio sharedInstance]playEffect:@"fire.mp3"];
+
 }
 
 @end

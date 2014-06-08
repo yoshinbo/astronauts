@@ -9,6 +9,7 @@
 #import "ResultLayer.h"
 #import "GameScene.h"
 #import "PhysicsLayer.h"
+#import "AdLayer.h"
 
 @implementation ResultLayer
 
@@ -23,7 +24,7 @@
         // Create a back button
         CCButton *backButton = [CCButton buttonWithTitle:@"[ Go Back ]" fontName:@"Verdana-Bold" fontSize:18.0f];
         backButton.positionType = CCPositionTypeNormalized;
-        backButton.position = ccp(0.50f, 0.40f); // Top Right of screen
+        backButton.position = ccp(0.50f, 0.20f);
         [backButton setTarget:self selector:@selector(onBackClicked:)];
         [self addChild:backButton];
 
@@ -31,17 +32,26 @@
         CCLabelBMFont* label = [[CCLabelBMFont alloc] initWithString:@"Game Over"
                                                               fntFile:@"font.fnt"];
         label.anchorPoint = ccp(0.5f, 0.5f);
-        label.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+        label.position = ccp(self.contentSize.width/2, self.contentSize.height/2 + 75);
         [self addChild:label];
+        
+        // Score
+        CCLabelTTF *scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Score : %d", score] fontName:@"Verdana-Bold" fontSize:18.0f];
+        scoreLabel.positionType = CCPositionTypeNormalized;
+        scoreLabel.position = ccp(0.50f, 0.50f);
+        [self addChild:scoreLabel];
 
         // Best Score
         if (isBest) {
-            CCLabelTTF *bestScoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Best Score: %d", score] fontName:@"Verdana-Bold" fontSize:18.0f];
-            bestScoreLabel.anchorPoint = ccp(0.5f, 0.5f);
-            bestScoreLabel.position = ccp(self.contentSize.width/2,
-                                          self.contentSize.height/8*3-45);
+            CCLabelTTF *bestScoreLabel = [CCLabelTTF labelWithString:@"This is The Best Score!!!" fontName:@"Verdana-Bold" fontSize:18.0f];
+            bestScoreLabel.positionType = CCPositionTypeNormalized;
+            bestScoreLabel.position = ccp(0.50f, 0.45f);
             [self addChild:bestScoreLabel];
         }
+        
+        // Ad
+        AdLayer *_ad = [AdLayer layer];
+        [self addChild:_ad];
     }
 
     return self;

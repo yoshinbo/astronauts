@@ -8,6 +8,7 @@
 
 #import "IntroLayer.h"
 #import "GameScene.h"
+#import "AdLayer.h"
 
 @implementation IntroLayer
 
@@ -40,6 +41,10 @@
         bestScoreLabel.position = ccp(self.contentSize.width/2,
                               self.contentSize.height/8*3-45);
         [self addChild:bestScoreLabel];
+        
+        // AdLayer
+        AdLayer *_ad = [AdLayer layer];
+        [self addChild:_ad];
         
     }
 

@@ -7,6 +7,7 @@
 //
 
 #import "PlayerNode.h"
+#import "CCAnimation.h"
 
 @implementation PlayerNode
 {
@@ -23,7 +24,7 @@ static const float player_scale = 0.5;
 {
     self = [super initWithImageNamed:@"player.png"];
     if (self) {
-
+    
         // init values
         _velocity_y = -1;
         winSize = [CCDirector sharedDirector].viewSize;
@@ -61,6 +62,18 @@ static const float player_scale = 0.5;
 - (void)jump
 {
     _velocity_y = jump_degree;
+    CCSpriteFrame* player1 = [CCSpriteFrame frameWithImageNamed:@"player1.png"];
+    CCSpriteFrame* player2 = [CCSpriteFrame frameWithImageNamed:@"player2.png"];
+    CCSpriteFrame* playerd = [CCSpriteFrame frameWithImageNamed:@"player.png"];
+    NSArray* frameArray = [NSArray arrayWithObjects: player1, player2, playerd, nil];
+    
+    // animation
+    CCAnimation *animatino = [CCAnimation animationWithSpriteFrames:frameArray delay:0.2f];
+    CCActionAnimate* action = [CCActionAnimate actionWithAnimation:animatino];
+    [self runAction:action];
+    
+    // se
+    [[OALSimpleAudio sharedInstance]playEffect:@"jump.mp3"];
 }
 
 @end

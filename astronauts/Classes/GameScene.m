@@ -12,6 +12,8 @@
 #import "PhysicsLayer.h"
 #import "ResultLayer.h"
 #import "BackgroundLayer.h"
+#import "AdLayer.h"
+#import "OALSimpleAudio.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - GameScene
@@ -20,6 +22,7 @@
 @implementation GameScene
 {
     CCSprite *_sprite;
+    BOOL _isGameOver;
 }
 
 static GameScene *_scene = nil;
@@ -80,6 +83,11 @@ static GameScene *_scene = nil;
     PhysicsLayer *physics = [[PhysicsLayer alloc]initWithContentSize:self.contentSize];
     [self addChild:physics];
 
+    [[OALSimpleAudio sharedInstance]preloadEffect:@"jump.mp3"];
+    [[OALSimpleAudio sharedInstance]preloadEffect:@"bomb.mp3"];
+    [[OALSimpleAudio sharedInstance]preloadEffect:@"fire.mp3"];
+    [[OALSimpleAudio sharedInstance]playBg:@"bgm.mp3" loop:YES];
+    
     // done
 	return self;
 }
@@ -124,9 +132,12 @@ static GameScene *_scene = nil;
 
 - (void)gameOver:(int)score
 {
-    bool isBest = [GameScene updateBestScore:score];
-    ResultLayer *result = [[ResultLayer alloc] initWithContentSize:self.contentSize :score :isBest];
-    [self addChild:result];
+    if (!_isGameOver) {
+        bool isBest = [GameScene updateBestScore:score];
+        ResultLayer *result = [[ResultLayer alloc] initWithContentSize:self.contentSize :score :isBest];
+        [self addChild:result];
+        _isGameOver = YES;
+    }
 }
 
 // plistのデータを取得する

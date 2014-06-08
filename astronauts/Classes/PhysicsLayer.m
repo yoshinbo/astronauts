@@ -153,10 +153,14 @@ static const int addStarAfterDuration = 10;
     CGPoint point = player.position;
     [player removeFromParent];
 
+    // particle
     CCParticleExplosion *particle = [[CCParticleExplosion alloc]init];
     particle.position = point;
     particle.autoRemoveOnFinish = YES;
     [self addChild:particle];
+    
+    // se
+    [[OALSimpleAudio sharedInstance]playEffect:@"bomb.mp3"];
 
     [self over];
 
@@ -191,7 +195,8 @@ static const int addStarAfterDuration = 10;
 {
     is_start = FALSE;
     is_over = TRUE;
-
+    
+    [_scoreLabel removeFromParent];
     [[GameScene sharedInstance] gameOver:score];
 
 }
