@@ -21,13 +21,13 @@
         self.contentSize = contentSize;
 
         // Title Label
-        CCLabelBMFont* label1 = [[CCLabelBMFont alloc] initWithString:@"Bouncy"
-                                                             fntFile:@"font.fnt"];
+        CCLabelBMFont* label1 = [[CCLabelBMFont alloc] initWithString:@"Space"
+                                                             fntFile:@"Main.fnt"];
         label1.anchorPoint = ccp(0.5f, 0.5f);
         label1.position = ccp(self.contentSize.width/2,
                              self.contentSize.height/4*3);
-        CCLabelBMFont* label2 = [[CCLabelBMFont alloc] initWithString:@"Astronauts"
-                                                             fntFile:@"font.fnt"];
+        CCLabelBMFont* label2 = [[CCLabelBMFont alloc] initWithString:@"Ranger"
+                                                             fntFile:@"Main.fnt"];
         label2.anchorPoint = ccp(0.5f, 0.5f);
         label2.position = ccp(self.contentSize.width/2,
                              self.contentSize.height/4*3-45);
@@ -36,10 +36,11 @@
         
         // Best Score
         int bestScore = [GameScene getBestScore];
-        CCLabelTTF *bestScoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Best Score: %d", bestScore] fontName:@"Verdana-Bold" fontSize:18.0f];
+        CCLabelBMFont *bestScoreLabel = [[CCLabelBMFont alloc] initWithString:[NSString stringWithFormat:@"Best Score %d", bestScore] fntFile:@"Normal.fnt"];
+        bestScoreLabel.scale = 0.5f;
         bestScoreLabel.anchorPoint = ccp(0.5f, 0.5f);
         bestScoreLabel.position = ccp(self.contentSize.width/2,
-                              self.contentSize.height/8*3-45);
+                              self.contentSize.height/8*3-30);
         [self addChild:bestScoreLabel];
         
         // AdLayer

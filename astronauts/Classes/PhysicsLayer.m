@@ -184,8 +184,9 @@ static const int addStarAfterDuration = 10;
         score = 0;
         NSString *targetString = [NSString stringWithFormat:@"%d",score];
         _scoreLabel = [[CCLabelBMFont alloc] initWithString:targetString
-                                                             fntFile:@"font.fnt"];
+                                                             fntFile:@"Bold.fnt"];
         _scoreLabel.color = [CCColor whiteColor];
+        _scoreLabel.scale = 0.6f;
         _scoreLabel.position = ccp(self.contentSize.width/2, self.contentSize.height*0.95f);
         [self addChild:_scoreLabel];
     }

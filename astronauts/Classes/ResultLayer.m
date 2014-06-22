@@ -22,30 +22,37 @@
         self.contentSize = contentSize;
 
         // Create a back button
-        CCButton *backButton = [CCButton buttonWithTitle:@"[ Go Back ]" fontName:@"Verdana-Bold" fontSize:18.0f];
+        CCButton *backButton = [CCButton buttonWithTitle:@"BACK TO TITLE" fontName:@"RegencieLightAlt" fontSize:23.0f];
         backButton.positionType = CCPositionTypeNormalized;
         backButton.position = ccp(0.50f, 0.20f);
         [backButton setTarget:self selector:@selector(onBackClicked:)];
         [self addChild:backButton];
 
         // Label
-        CCLabelBMFont* label = [[CCLabelBMFont alloc] initWithString:@"Game Over"
-                                                              fntFile:@"font.fnt"];
+        CCLabelBMFont* label = [[CCLabelBMFont alloc] initWithString:@"GameOver"
+                                                              fntFile:@"Main.fnt"];
         label.anchorPoint = ccp(0.5f, 0.5f);
+        label.scale = 0.7f;
         label.position = ccp(self.contentSize.width/2, self.contentSize.height/2 + 75);
         [self addChild:label];
         
         // Score
-        CCLabelTTF *scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Score : %d", score] fontName:@"Verdana-Bold" fontSize:18.0f];
+        CCLabelBMFont *scoreLabel = [[CCLabelBMFont alloc]
+                                     initWithString:[NSString stringWithFormat:@"Score %d", score]
+                                     fntFile:@"Normal.fnt"];
         scoreLabel.positionType = CCPositionTypeNormalized;
         scoreLabel.position = ccp(0.50f, 0.50f);
+        scoreLabel.scale = 0.5f;
         [self addChild:scoreLabel];
 
         // Best Score
         if (isBest) {
-            CCLabelTTF *bestScoreLabel = [CCLabelTTF labelWithString:@"This is The Best Score!!!" fontName:@"Verdana-Bold" fontSize:18.0f];
+            CCLabelBMFont *bestScoreLabel = [[CCLabelBMFont alloc]
+                                         initWithString:@"The Best Score!!!"
+                                         fntFile:@"Normal.fnt"];
             bestScoreLabel.positionType = CCPositionTypeNormalized;
-            bestScoreLabel.position = ccp(0.50f, 0.45f);
+            bestScoreLabel.position = ccp(0.50f, 0.40f);
+            bestScoreLabel.scale = 0.5f;
             [self addChild:bestScoreLabel];
         }
         

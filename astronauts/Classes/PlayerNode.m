@@ -31,8 +31,13 @@ static const float player_scale = 0.5;
 
         // init sprite
         self.scale = player_scale;
-        self.position = position;
+        self.position = ccp(position.x, winSize.height+self.contentSize.height * 0.4);
         self.anchorPoint = ccp(0.5, 0.5);
+        
+        // animation
+        CCAction *actionMove = [CCActionMoveTo actionWithDuration:1 position:position];
+        CCActionAnimate *jumpAction = [self jumpAction];
+        [self runAction:[CCActionSequence actionWithArray:@[actionMove,jumpAction]]];
     }
     return self;
 }
@@ -59,7 +64,7 @@ static const float player_scale = 0.5;
     }
 }
 
-- (void)jump
+- (CCActionAnimate *)jumpAction
 {
     _velocity_y = jump_degree;
     CCSpriteFrame* player1 = [CCSpriteFrame frameWithImageNamed:@"player1.png"];
@@ -69,10 +74,14 @@ static const float player_scale = 0.5;
     
     // animation
     CCAnimation *animatino = [CCAnimation animationWithSpriteFrames:frameArray delay:0.2f];
-    CCActionAnimate* action = [CCActionAnimate actionWithAnimation:animatino];
+    return [CCActionAnimate actionWithAnimation:animatino];
+}
+
+- (void)jump
+{
+    CCActionAnimate* action = [self jumpAction];
     [self runAction:action];
-    
-    // se
+    // SE
     [[OALSimpleAudio sharedInstance]playEffect:@"jump.mp3"];
 }
 

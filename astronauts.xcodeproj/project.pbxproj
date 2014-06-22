@@ -217,14 +217,19 @@
 		B81088C318BAB03D00F90511 /* PhysicsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B81088C218BAB03D00F90511 /* PhysicsLayer.m */; };
 		B82325521911242B006C1883 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82325511911242B006C1883 /* AdSupport.framework */; };
 		B82325541911244B006C1883 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82325531911244B006C1883 /* MessageUI.framework */; };
+		B8263A31195668D6008C4A00 /* Bold.fnt in Resources */ = {isa = PBXBuildFile; fileRef = B8263A2F195668D6008C4A00 /* Bold.fnt */; };
+		B8263A32195668D6008C4A00 /* Bold.png in Resources */ = {isa = PBXBuildFile; fileRef = B8263A30195668D6008C4A00 /* Bold.png */; };
+		B8263A3519567179008C4A00 /* Normal.fnt in Resources */ = {isa = PBXBuildFile; fileRef = B8263A3319567179008C4A00 /* Normal.fnt */; };
+		B8263A3619567179008C4A00 /* Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = B8263A3419567179008C4A00 /* Normal.png */; };
+		B8263A391956794A008C4A00 /* Main.fnt in Resources */ = {isa = PBXBuildFile; fileRef = B8263A371956794A008C4A00 /* Main.fnt */; };
+		B8263A3A1956794A008C4A00 /* Main.png in Resources */ = {isa = PBXBuildFile; fileRef = B8263A381956794A008C4A00 /* Main.png */; };
+		B8263A3C1956823D008C4A00 /* RegencieLightAlt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8263A3B1956823D008C4A00 /* RegencieLightAlt.ttf */; };
 		B84F43E018C356950009E709 /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B84F43DF18C356950009E709 /* BackgroundLayer.m */; };
 		B87B2AC8193B351400121C54 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B87B2AC7193B351400121C54 /* libGoogleAdMobAds.a */; };
 		B87B2AD1193B35B100121C54 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B87B2AD0193B35B100121C54 /* StoreKit.framework */; };
 		B87B2AD3193B35C900121C54 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B87B2AD2193B35C800121C54 /* SystemConfiguration.framework */; };
 		B87B2AD5193B35D200121C54 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B87B2AD4193B35D200121C54 /* CoreTelephony.framework */; };
 		B87B2AD8193B367600121C54 /* AdLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B87B2AD7193B367600121C54 /* AdLayer.m */; };
-		B897D65718D454DB00ACA970 /* font.fnt in Resources */ = {isa = PBXBuildFile; fileRef = B897D65518D454DB00ACA970 /* font.fnt */; };
-		B897D65818D454DB00ACA970 /* font.png in Resources */ = {isa = PBXBuildFile; fileRef = B897D65618D454DB00ACA970 /* font.png */; };
 		B8B1AFD618CC586900363EAA /* SuperMeteoriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B1AFD518CC586900363EAA /* SuperMeteoriteNode.m */; };
 		B8B1CCED18C18A6800A77730 /* MeteoriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B1CCEC18C18A6800A77730 /* MeteoriteNode.m */; };
 		B8C101EB1918FC3400E2FC14 /* sprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8C101E71918FC3400E2FC14 /* sprites-hd.plist */; };
@@ -691,6 +696,13 @@
 		B81088C218BAB03D00F90511 /* PhysicsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhysicsLayer.m; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/PhysicsLayer.m; sourceTree = "<absolute>"; };
 		B82325511911242B006C1883 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		B82325531911244B006C1883 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		B8263A2F195668D6008C4A00 /* Bold.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Bold.fnt; sourceTree = "<group>"; };
+		B8263A30195668D6008C4A00 /* Bold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bold.png; sourceTree = "<group>"; };
+		B8263A3319567179008C4A00 /* Normal.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Normal.fnt; sourceTree = "<group>"; };
+		B8263A3419567179008C4A00 /* Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Normal.png; sourceTree = "<group>"; };
+		B8263A371956794A008C4A00 /* Main.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Main.fnt; sourceTree = "<group>"; };
+		B8263A381956794A008C4A00 /* Main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Main.png; sourceTree = "<group>"; };
+		B8263A3B1956823D008C4A00 /* RegencieLightAlt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RegencieLightAlt.ttf; sourceTree = "<group>"; };
 		B84F43DE18C356950009E709 /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundLayer.h; path = Classes/BackgroundLayer.h; sourceTree = "<group>"; };
 		B84F43DF18C356950009E709 /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundLayer.m; path = Classes/BackgroundLayer.m; sourceTree = "<group>"; };
 		B87B2ABE193B351400121C54 /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADAdMobExtras.h; path = "GoogleAdMobAdsSdkiOS-6.8.0/GADAdMobExtras.h"; sourceTree = "<group>"; };
@@ -714,8 +726,6 @@
 		B87B2AD4193B35D200121C54 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		B87B2AD6193B367600121C54 /* AdLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdLayer.h; path = Classes/AdLayer.h; sourceTree = "<group>"; };
 		B87B2AD7193B367600121C54 /* AdLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdLayer.m; path = Classes/AdLayer.m; sourceTree = "<group>"; };
-		B897D65518D454DB00ACA970 /* font.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = font.fnt; sourceTree = "<group>"; };
-		B897D65618D454DB00ACA970 /* font.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = font.png; sourceTree = "<group>"; };
 		B8B1AFD418CC586900363EAA /* SuperMeteoriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuperMeteoriteNode.h; path = Classes/SuperMeteoriteNode.h; sourceTree = "<group>"; };
 		B8B1AFD518CC586900363EAA /* SuperMeteoriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SuperMeteoriteNode.m; path = Classes/SuperMeteoriteNode.m; sourceTree = "<group>"; };
 		B8B1CCEB18C18A6800A77730 /* MeteoriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeteoriteNode.h; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/MeteoriteNode.h; sourceTree = "<absolute>"; };
@@ -838,6 +848,13 @@
 		B81085FE18B970DC00F90511 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B8263A3B1956823D008C4A00 /* RegencieLightAlt.ttf */,
+				B8263A371956794A008C4A00 /* Main.fnt */,
+				B8263A381956794A008C4A00 /* Main.png */,
+				B8263A3319567179008C4A00 /* Normal.fnt */,
+				B8263A3419567179008C4A00 /* Normal.png */,
+				B8263A2F195668D6008C4A00 /* Bold.fnt */,
+				B8263A30195668D6008C4A00 /* Bold.png */,
 				B8C819D71943FF8B00C16DF4 /* fire.mp3 */,
 				B8C819D11943F10300C16DF4 /* bomb.mp3 */,
 				B8C819D21943F10300C16DF4 /* bgm.mp3 */,
@@ -848,8 +865,6 @@
 				B8C101EA1918FC3400E2FC14 /* sprites.png */,
 				B8EA700B190F41D300A4361C /* data.plist */,
 				B8EA70091909505800A4361C /* ccphysics.plist */,
-				B897D65518D454DB00ACA970 /* font.fnt */,
-				B897D65618D454DB00ACA970 /* font.png */,
 				B81085FF18B970DC00F90511 /* Default.png */,
 				B810860118B970DC00F90511 /* Default@2x.png */,
 				B810860318B970DC00F90511 /* Default-568h@2x.png */,
@@ -1835,9 +1850,11 @@
 				B810860218B970DC00F90511 /* Default@2x.png in Resources */,
 				B810861518B970DC00F90511 /* Icon-120.png in Resources */,
 				B8C819D61943F10300C16DF4 /* jump.mp3 in Resources */,
+				B8263A391956794A008C4A00 /* Main.fnt in Resources */,
 				B810881918B970DE00F90511 /* LICENSE_CCBReader.txt in Resources */,
 				B810860B18B970DC00F90511 /* Icon@2x.png in Resources */,
 				B810861D18B970DC00F90511 /* Icon-Small@2x.png in Resources */,
+				B8263A32195668D6008C4A00 /* Bold.png in Resources */,
 				B810860F18B970DC00F90511 /* Icon-72@2x.png in Resources */,
 				B810860018B970DC00F90511 /* Default.png in Resources */,
 				B8C101EE1918FC3400E2FC14 /* sprites.png in Resources */,
@@ -1848,13 +1865,16 @@
 				B810861918B970DC00F90511 /* Icon-Small-50.png in Resources */,
 				B81088A418B970DF00F90511 /* fire.plist in Resources */,
 				B81088A618B970DF00F90511 /* fire.png in Resources */,
+				B8263A3619567179008C4A00 /* Normal.png in Resources */,
+				B8263A3C1956823D008C4A00 /* RegencieLightAlt.ttf in Resources */,
 				B8C819D81943FF8B00C16DF4 /* fire.mp3 in Resources */,
 				B810880218B970DE00F90511 /* LICENSE_Kazmath.txt in Resources */,
 				B8EA700A1909505800A4361C /* ccphysics.plist in Resources */,
 				B810860D18B970DC00F90511 /* Icon-72.png in Resources */,
+				B8263A3A1956794A008C4A00 /* Main.png in Resources */,
 				B8C101ED1918FC3400E2FC14 /* sprites.plist in Resources */,
-				B897D65818D454DB00ACA970 /* font.png in Resources */,
-				B897D65718D454DB00ACA970 /* font.fnt in Resources */,
+				B8263A31195668D6008C4A00 /* Bold.fnt in Resources */,
+				B8263A3519567179008C4A00 /* Normal.fnt in Resources */,
 				B8C101EC1918FC3400E2FC14 /* sprites-hd.png in Resources */,
 				B8C819D41943F10300C16DF4 /* bomb.mp3 in Resources */,
 				B810875B18B970DE00F90511 /* LICENSE_cocos2d.txt in Resources */,
