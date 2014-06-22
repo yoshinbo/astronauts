@@ -10,6 +10,6 @@
 
 @interface MeteoriteNode : CCSprite
 
-- (MeteoriteNode *)init;
+- (MeteoriteNode *)initWithPosition:(CGPoint)position;
 
 @end

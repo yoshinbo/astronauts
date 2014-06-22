@@ -30,9 +30,9 @@
     CCLabelBMFont *_scoreLabel;
 }
 
-static const int addMeteoriteAfterDuration = 80;
-static const int addSuperMeteoriteAfterDuration = 500;
-static const int addScoreAfterDuration = 100;
+static const int addMeteoriteAfterDuration = 70;
+static const int addSuperMeteoriteAfterDuration = 400;
+static const int addScoreAfterDuration = 70;
 static const int addStarAfterDuration = 10;
 
 
@@ -92,7 +92,7 @@ static const int addStarAfterDuration = 10;
         frameSpentSinceLastMeteoriteAdded++;
         if (frameSpentSinceLastMeteoriteAdded == addMeteoriteAfterDuration) {
             frameSpentSinceLastMeteoriteAdded = 0;
-            [self addMeteorite];
+            [self addMeteorite:_player.position];
         }
         frameSpentSinceLastSuperMeteoriteAdded++;
         if (frameSpentSinceLastSuperMeteoriteAdded == addSuperMeteoriteAfterDuration) {
@@ -130,9 +130,9 @@ static const int addStarAfterDuration = 10;
     [_physicsNode addChild:meteorite];
 }
 
--(void) addMeteorite
+-(void) addMeteorite:(CGPoint)position
 {
-    MeteoriteNode *meteorite = [[MeteoriteNode alloc] init];
+    MeteoriteNode *meteorite = [[MeteoriteNode alloc] initWithPosition:position];
     [self meteoriteCreater:meteorite withType:@"meteorite1"];
 }
 

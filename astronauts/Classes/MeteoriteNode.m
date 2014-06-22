@@ -16,8 +16,9 @@
 static const int minDuration = 3.0;
 static const int maxDuration = 6.0;
 static const float scale = 1.0;
+static const int homing_frequency = 3;
 
-- (MeteoriteNode *) init
+- (MeteoriteNode *) initWithPosition:(CGPoint)position
 {
     self = [super initWithImageNamed:@"meteorite1.png"];
     if (self) {
@@ -32,7 +33,22 @@ static const float scale = 1.0;
         int rangeY = maxY - minY;
         int randomY = arc4random_uniform(rangeY) + minY;
 
-        self.position = ccp(winSize.width + self.contentSize.width/2, randomY);
+        CGPoint r_position;
+        if ([MeteoriteNode is_homing]){
+            // homing meteorite
+            if (position.y > maxY) {
+                r_position = ccp(winSize.width + self.contentSize.width/2, maxY);
+            } else if (position.y < minY) {
+                r_position = ccp(winSize.width + self.contentSize.width/2, minY);
+            } else {
+                r_position = ccp(winSize.width + self.contentSize.width/2, position.y);
+            }
+        } else {
+            // randam meteorite
+            r_position = ccp(winSize.width + self.contentSize.width/2, randomY);
+        }
+
+        self.position = r_position;
         self.anchorPoint = ccp(0.5, 0.5);
 
         [self shot];
@@ -44,6 +60,7 @@ static const float scale = 1.0;
 {
     int rangeDuration = maxDuration - minDuration;
     int randomDuration = (arc4random() % rangeDuration) + minDuration;
+
     // Attuch movement to Monster
     CCAction *actionMove = [CCActionMoveBy
                             actionWithDuration:randomDuration position:CGPointMake(
@@ -53,6 +70,12 @@ static const float scale = 1.0;
                             ];
     CCAction *actionRemove = [CCActionRemove action];
     [self runAction:[CCActionSequence actionWithArray:@[actionMove,actionRemove]]];
+}
+
++ (BOOL) is_homing
+{
+    int rand = arc4random_uniform(homing_frequency);
+    return rand == 0 ? YES : NO;
 }
 
 @end
