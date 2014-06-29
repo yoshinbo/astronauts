@@ -14,6 +14,7 @@
 #import "BackgroundLayer.h"
 #import "AdLayer.h"
 #import "OALSimpleAudio.h"
+#import <GameKit/GameKit.h>
 
 // -----------------------------------------------------------------------
 #pragma mark - GameScene
@@ -23,6 +24,7 @@
 {
     CCSprite *_sprite;
     BOOL _isGameOver;
+    PhysicsLayer* _physics;
 }
 
 static GameScene *_scene = nil;
@@ -74,20 +76,20 @@ static GameScene *_scene = nil;
     [self addChild:spritesBgNode];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"sprites.plist"];
 
-    IntroLayer *intro = [[IntroLayer alloc] initWithContentSize:self.contentSize];
-    [self addChild:intro z:0 name:@"intro"];
-
     BackgroundLayer *background = [[BackgroundLayer alloc]initWithContentSize:self.contentSize];
     [self addChild:background];
 
-    PhysicsLayer *physics = [[PhysicsLayer alloc]initWithContentSize:self.contentSize];
-    [self addChild:physics];
+    _physics = [[PhysicsLayer alloc]initWithContentSize:self.contentSize];
+    [self addChild:_physics];
+
+    IntroLayer *intro = [[IntroLayer alloc] initWithContentSize:self.contentSize];
+    [self addChild:intro z:0 name:@"intro"];
 
     [[OALSimpleAudio sharedInstance]preloadEffect:@"jump.mp3"];
     [[OALSimpleAudio sharedInstance]preloadEffect:@"bomb.mp3"];
     [[OALSimpleAudio sharedInstance]preloadEffect:@"fire.mp3"];
     [[OALSimpleAudio sharedInstance]playBg:@"bgm.mp3" loop:YES];
-    
+
     // done
 	return self;
 }
@@ -107,6 +109,9 @@ static GameScene *_scene = nil;
 {
     // always call super onEnter first
     [super onEnter];
+
+    // Game Center
+    [GameScene updateGameCenter];
 
     // In pre-v3, touch enable and scheduleUpdate was called here
     // In v3, touch is enabled by setting userInterActionEnabled for the individual nodes
@@ -128,6 +133,7 @@ static GameScene *_scene = nil;
     if (intro) {
         [self removeChild:intro];
     }
+    [_physics Start];
 }
 
 - (void)gameOver:(int)score
@@ -154,22 +160,63 @@ static GameScene *_scene = nil;
 
 + (int)getBestScore
 {
-    NSDictionary *dictionary = [self getDataPlist];
-    return [[dictionary objectForKey:@"BestScore"] intValue];
+    return [[NSUserDefaults standardUserDefaults] integerForKey:@"bestScore"];
 }
 
 + (bool)updateBestScore:(int)newScore
 {
     bool isBest = false;
-    NSDictionary *dictionary = [self getDataPlist];
-    int score = [[dictionary objectForKey:@"BestScore"] intValue];
+    int score = [GameScene getBestScore];
     if (newScore > score) {
-        [dictionary setValue:[NSNumber numberWithInteger:newScore] forKey:@"BestScore"];
-        [dictionary writeToFile:[self getDataPlistPass] atomically:YES];
+        [[NSUserDefaults standardUserDefaults] setInteger:newScore forKey:@"bestScore"];
         score = newScore;
         isBest = true;
     }
     return isBest;
+}
+
++ (void)updateGameCenter
+{
+    // GameCenter
+    int bestScore = [GameScene getBestScore];
+    GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
+    [localPlayer authenticateWithCompletionHandler:^(NSError *error){
+        if (localPlayer.isAuthenticated)
+        {
+            //認証
+            NSArray* playerID = [[NSArray alloc] initWithObjects:localPlayer.playerID, nil]; //自分のプレイヤーIDのみのArrayを用意
+            GKLeaderboard *leaderboardRequest = [[GKLeaderboard alloc] initWithPlayerIDs:playerID];
+            if (leaderboardRequest != nil) {
+                leaderboardRequest.timeScope = GKLeaderboardTimeScopeAllTime;
+                leaderboardRequest.category = @"SpaceRanger.ranking";
+                leaderboardRequest.range = NSMakeRange(1,1); //一番良いスコアを読み出す
+                // ベストスコアをGame Centerから読み出す
+                [leaderboardRequest loadScoresWithCompletionHandler: ^(NSArray *scores, NSError *error) {
+                    if (error != nil) {
+                    }
+                    int highScore;
+                    if (scores != nil) {
+                        highScore = ((GKScore *)[scores objectAtIndex:0]).value;
+                    } else {
+                        // 初回プレイ時はscoresがnilなので0ハイスコアを0とする。
+                        highScore = 0;
+                    }
+                    if (highScore > bestScore) { // Game Centerのスコアが高い場合NSUserDefaultsをそれに合わせる
+                        [GameScene updateBestScore:highScore];
+                    } else { //NSUserDefaultsのスコアが高い場合GameCenterをそれに合わせる
+                        GKScore *scoreReporter = [[GKScore alloc] initWithCategory:@"SpaceRanger.ranking"];
+                        scoreReporter.value = bestScore;
+                        scoreReporter.context = 0;
+                        [scoreReporter reportScoreWithCompletionHandler:^(NSError *error) {
+                        }];
+                    }
+                }];
+            }
+        }
+        else {
+            //認証されず
+        }
+    }];
 }
 
 @end

@@ -12,5 +12,6 @@
 @interface PhysicsLayer : CCNode <CCPhysicsCollisionDelegate>
 
 - (PhysicsLayer *)initWithContentSize:(CGSize)contentSize;
+- (void) Start;
 
 @end

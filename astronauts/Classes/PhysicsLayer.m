@@ -63,7 +63,7 @@ static const int addStarAfterDuration = 10;
 
         // add player node
         _player = [[PlayerNode alloc]initWithPosition:
-                   ccp(self.contentSize.width/4,self.contentSize.height/2)];
+                   ccp(self.contentSize.width/4,self.contentSize.height/2 - 20)];
         [[GCCShapeCache sharedShapeCache] setBodyWithName:@"player" onNode:_player];
         _player.physicsBody.collisionGroup = @"playerGroup";
         _player.physicsBody.collisionType = @"playerCollision";
@@ -116,10 +116,7 @@ static const int addStarAfterDuration = 10;
 
     if (is_start) {
         [_player jump];
-    } else {
-        [self start];
     }
-
 }
 
 -(void) meteoriteCreater:(CCNode *)meteorite withType:(NSString*)type
@@ -174,11 +171,10 @@ static const int addStarAfterDuration = 10;
     [_scoreLabel setString: [NSString stringWithFormat:@"%@",scoreStr]];
 }
 
-- (void) start
+- (void) Start
 {
     if (!is_over) {
         is_start = TRUE;
-        [[GameScene sharedInstance] gameStart];
         
         // Score
         score = 0;

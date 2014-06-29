@@ -11,6 +11,9 @@
 #import "AdLayer.h"
 
 @implementation IntroLayer
+{
+    UIViewController* _viewController;
+}
 
 - (IntroLayer *)initWithContentSize:(CGSize)contentSize
 {
@@ -33,7 +36,7 @@
                              self.contentSize.height/4*3-45);
         [self addChild:label1];
         [self addChild:label2];
-        
+
         // Best Score
         int bestScore = [GameScene getBestScore];
         CCLabelBMFont *bestScoreLabel = [[CCLabelBMFont alloc] initWithString:[NSString stringWithFormat:@"Best Score %d", bestScore] fntFile:@"Normal.fnt"];
@@ -42,16 +45,51 @@
         bestScoreLabel.position = ccp(self.contentSize.width/2,
                               self.contentSize.height/8*3-30);
         [self addChild:bestScoreLabel];
-        
+
+        // Start Rect
+        self.userInteractionEnabled = YES;
+
+        // Create ranking button
+        CCButton *rankingButton = [CCButton buttonWithTitle:@"Ranking" fontName:@"RegencieLightAlt" fontSize:23.0f];
+        rankingButton.positionType = CCPositionTypeNormalized;
+        rankingButton.position = ccp(0.50f, 0.20f);
+        [rankingButton setTarget:self selector:@selector(onRankingClicked:)];
+        [self addChild:rankingButton];
+
         // AdLayer
         AdLayer *_ad = [AdLayer layer];
         [self addChild:_ad];
-        
+
     }
 
     return self;
 }
 
+- (void)onEnter
+{
+    [super onEnter];
+    _viewController = [[UIViewController alloc] init];
+    [[[CCDirector sharedDirector] view] addSubview:_viewController.view];
+}
 
+-(void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
+    [[GameScene sharedInstance] gameStart];
+}
+
+- (void)onRankingClicked:(id)sender
+{
+    GKLeaderboardViewController* leaderboardController = [[GKLeaderboardViewController alloc] init];
+    if (leaderboardController != nil){
+        leaderboardController.leaderboardDelegate = self;
+        leaderboardController.timeScope = GKLeaderboardTimeScopeAllTime; //全期間のハイスコアを表示
+        leaderboardController.category = @"SpaceRanger.ranking";
+        [_viewController presentViewController: leaderboardController animated: YES completion:nil];
+    }
+}
+
+- (void)leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController
+{
+    [_viewController dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

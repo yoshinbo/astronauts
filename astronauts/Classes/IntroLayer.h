@@ -8,8 +8,9 @@
 
 #import "cocos2d.h"
 #import "cocos2d-ui.h"
+#import <GameKit/GameKit.h>
 
-@interface IntroLayer : CCNode
+@interface IntroLayer : CCNode <GKLeaderboardViewControllerDelegate>
 
 - (IntroLayer *)initWithContentSize:(CGSize)contentSize;
 
