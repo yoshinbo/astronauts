@@ -50,9 +50,10 @@
         self.userInteractionEnabled = YES;
 
         // Create ranking button
-        CCButton *rankingButton = [CCButton buttonWithTitle:@"Ranking" fontName:@"RegencieLightAlt" fontSize:23.0f];
+        CCButton *rankingButton = [CCButton buttonWithTitle:@"Ranking" fontName:@"RegencieLightAlt" fontSize:25.0f];
         rankingButton.positionType = CCPositionTypeNormalized;
         rankingButton.position = ccp(0.50f, 0.20f);
+        [rankingButton setColor:[CCColor colorWithCcColor3b:ccc3(255, 255, 153)]];
         [rankingButton setTarget:self selector:@selector(onRankingClicked:)];
         [self addChild:rankingButton];
 

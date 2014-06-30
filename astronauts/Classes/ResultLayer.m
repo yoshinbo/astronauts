@@ -25,6 +25,7 @@
         CCButton *backButton = [CCButton buttonWithTitle:@"BACK TO TITLE" fontName:@"RegencieLightAlt" fontSize:23.0f];
         backButton.positionType = CCPositionTypeNormalized;
         backButton.position = ccp(0.50f, 0.20f);
+        [backButton setColor:[CCColor colorWithCcColor3b:ccc3(255, 255, 153)]];
         [backButton setTarget:self selector:@selector(onBackClicked:)];
         [self addChild:backButton];
 
