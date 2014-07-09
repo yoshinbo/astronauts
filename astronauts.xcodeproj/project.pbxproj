@@ -679,7 +679,7 @@
 		B81088BB18B976AA00F90511 /* PlayerNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerNode.h; path = Classes/PlayerNode.h; sourceTree = "<group>"; };
 		B81088BC18B976AA00F90511 /* PlayerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerNode.m; path = Classes/PlayerNode.m; sourceTree = "<group>"; };
 		B81088C118BAB03D00F90511 /* PhysicsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhysicsLayer.h; path = Classes/PhysicsLayer.h; sourceTree = "<group>"; };
-		B81088C218BAB03D00F90511 /* PhysicsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhysicsLayer.m; path = /Users/yoshinbo/github/astronauts/astronauts/Classes/PhysicsLayer.m; sourceTree = "<absolute>"; };
+		B81088C218BAB03D00F90511 /* PhysicsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhysicsLayer.m; path = Classes/PhysicsLayer.m; sourceTree = "<group>"; };
 		B82325511911242B006C1883 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		B82325531911244B006C1883 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		B8263A2F195668D6008C4A00 /* Bold.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Bold.fnt; path = Resources/Font/Bold.fnt; sourceTree = "<group>"; };
