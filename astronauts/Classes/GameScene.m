@@ -12,7 +12,6 @@
 #import "PhysicsLayer.h"
 #import "ResultLayer.h"
 #import "BackgroundLayer.h"
-#import "AdLayer.h"
 #import "OALSimpleAudio.h"
 #import <GameKit/GameKit.h>
 
@@ -196,7 +195,7 @@ static GameScene *_scene = nil;
                     }
                     int highScore;
                     if (scores != nil) {
-                        highScore = ((GKScore *)[scores objectAtIndex:0]).value;
+                        highScore = (int)((GKScore *)[scores objectAtIndex:0]).value;
                     } else {
                         // 初回プレイ時はscoresがnilなので0ハイスコアを0とする。
                         highScore = 0;

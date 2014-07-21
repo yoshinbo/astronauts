@@ -59,7 +59,7 @@
 
         // AdLayer
         AdLayer *_ad = [AdLayer layer];
-        [self addChild:_ad];
+        [self addChild:_ad z:10];
 
     }
 
@@ -71,10 +71,14 @@
     [super onEnter];
     _viewController = [[UIViewController alloc] init];
     [[[CCDirector sharedDirector] view] addSubview:_viewController.view];
+    [[[CCDirector sharedDirector] view] sendSubviewToBack:_viewController.view];
 }
 
 -(void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    [[GameScene sharedInstance] gameStart];
+    CGPoint location = [touch locationInNode:self];
+    if (location.y > 100) {
+        [[GameScene sharedInstance] gameStart];
+    }
 }
 
 - (void)onRankingClicked:(id)sender

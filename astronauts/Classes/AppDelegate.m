@@ -9,6 +9,7 @@
 
 #import "AppDelegate.h"
 #import "GameScene.h"
+#import "Appirater.h"
 
 @implementation AppDelegate
 
@@ -41,6 +42,13 @@
 		// Make iPad's act like they run at a 2x content scale. (iPad retina 4x)
 //		CCSetupTabletScale2X: @(YES),
 	}];
+
+    // Setting of Appirater
+    [Appirater setAppId:@"894369150"];
+    [Appirater setDaysUntilPrompt:2]; // 何日経過したらアラートを表示するか。
+    [Appirater setUsesUntilPrompt:2]; // 何回開いたらアラートを表示するか
+    [Appirater setDebug:NO];
+    [Appirater appLaunched:YES];
 	
 	return YES;
 }
@@ -49,6 +57,12 @@
 {
 	// This method should return the very first scene to be run when your app starts.
 	return [GameScene scene];
+}
+
+// フォアグラウンド移行直前にコールされるメソッド
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    [Appirater appEnteredForeground:YES];
 }
 
 @end
